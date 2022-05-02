@@ -44,6 +44,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
       .post(`${import.meta.env.VITE_API_BASE_URL}users/register`, params)
       .then((data) => {
         console.log(data);
+        //TODO: Redirect to /login with propagated data and let the user log once
       })
       .catch((error) => {
         console.error(error);
