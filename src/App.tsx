@@ -1,6 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContextProvider } from "./context/auth.context";
+import Authenticate from "./pages/Authenticate";
 import Layout from "./ui/Layout";
 
 function App() {
@@ -11,12 +12,34 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            <Route index element={<h1>Authenticate</h1>} />
-            <Route path="edit">
-              <Route path="profile" element={<h1>Edit Profile</h1>} />
-              <Route path="spot" element={<h1>Edit Spot</h1>} />
+            <Route index element={<Authenticate />} />
+            <Route path="edit" element={<Navigate to="/" />}>
+              <Route
+                path="profile"
+                element={
+                  <ProtectedRoute>
+                    <h1>Edit Profile</h1>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="spot"
+                element={
+                  <ProtectedRoute>
+                    <h1>Edit Spot</h1>
+                  </ProtectedRoute>
+                }
+              />
             </Route>
 
+            <Route
+              path="new-spot"
+              element={
+                <ProtectedRoute>
+                  <h1>NEW SPOT</h1>
+                </ProtectedRoute>
+              }
+            />
             {/* /* TODO: FIX ROUTES OF SPOTS BY CATEGORY  */}
             <Route
               path="spots"
