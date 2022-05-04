@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import { Button } from "../ui/Button";
 
 const Authenticate = () => {
   const { user, token, login } = useContext(AuthContext);
@@ -20,7 +21,15 @@ const Authenticate = () => {
       <h1>Authenticate</h1>
 
       {/* TODO: Add register/login form */}
-      <button onClick={handleRegister}>Register</button>
+      <Button variant="white" onClick={handleRegister}>
+        Register
+      </Button>
+      <Button variant="transparent" onClick={handleRegister}>
+        Login
+      </Button>
+      <Button variant="transparent" disabled onClick={handleRegister}>
+        Logout
+      </Button>
     </div>
   );
 };
