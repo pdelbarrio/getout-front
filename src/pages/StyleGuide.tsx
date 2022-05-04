@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "../components/Image";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
 import { Input } from "../ui/form/Input";
@@ -30,6 +31,13 @@ const StyleGuide = () => {
         <Error>Something wrong happened</Error>
         <Error size="l">Something wrong happened</Error>
         <Error size="xl">Something wrong happened</Error>
+      </div>
+
+      <div>
+        <h2>Images</h2>
+
+        <Image src="/getoutlogo.png" alt="logo" />
+        <Image size="s" src="/getoutlogo.png" alt="logo" />
       </div>
     </div>
   );
