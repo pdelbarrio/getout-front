@@ -2,17 +2,18 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 const Authenticate = () => {
-  const { register } = useContext(AuthContext);
+  const { user, token, login } = useContext(AuthContext);
 
   //TODO: Handle form submit
 
   const handleRegister = () => {
-    register({
-      username: "GetOutUser",
-      email: "pablo@mail.lol",
+    login({
+      email: "test1@mail.com",
       password: "Hola1234$",
     });
   };
+
+  console.log("Authenticate", { user, token });
 
   return (
     <div>
