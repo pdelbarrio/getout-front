@@ -1,6 +1,8 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
+export type ButtonVariants = "white" | "transparent";
+
 const whiteBg = css`
   mix-blend-mode: normal;
 `;
@@ -9,12 +11,10 @@ const transparentBg = css`
   mix-blend-mode: darken;
 `;
 
-export type ButtonVariants = "white" | "transparent";
-
 export const Button = styled.button<{ variant: ButtonVariants }>`
   ${(props) => (props.variant === "white" ? whiteBg : transparentBg)}
   border: 1px solid #000;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   display: inline-flex;
   flex-shrink: 0;

@@ -96,6 +96,53 @@ body {
   --greenmenu: #84d633;
   --infomodal: #efe269;
   --dark: #160909;
+  --grey: #5f5b5b;
 
+  --padding-xs: 0.5rem;
+  --padding-s: 1rem;
   --padding-m: 2rem;
+
+  --border-radius: 50px;
+
+  --input-width: 400px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--whitetitle);
+}
+
+p,
+span {
+  color: var(--dark);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--whitetitle);
+  font-weight: bold;
+  line-height: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4,
+input,
+textarea,
+select {
+  font-size: 1rem;
 }
