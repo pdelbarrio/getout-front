@@ -11,5 +11,7 @@ const fontSizeBySize = {
 
 export const Error = styled.p<{ size?: ErrorSize }>`
   color: var(--error);
+  padding-left: 10px;
+
   ${({ size }) => fontSizeBySize[size || "m"]};
 `;

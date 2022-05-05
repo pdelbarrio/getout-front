@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 
 const errorInput = css`
   border: 2px solid var(--error);
+  margin-bottom: 1.25rem;
 `;
 
 export const Input = styled.input<{ hasError: boolean }>`
