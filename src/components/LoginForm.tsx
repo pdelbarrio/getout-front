@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { LoginParams } from "../api/auth.api";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
 import { Form, Label } from "../ui/form/Form";
@@ -6,7 +7,7 @@ import { Input } from "../ui/form/Input";
 import { emailValidation, passwordValidation } from "../utils/forms";
 
 export type Props = {
-  onSubmit: () => void;
+  onSubmit: (values: LoginParams) => Promise<void>;
 };
 
 const LoginForm = ({ onSubmit }: Props) => {

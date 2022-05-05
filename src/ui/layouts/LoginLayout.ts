@@ -21,3 +21,9 @@ export const ToggleWrapper = styled.div`
   margin-bottom: 2.5rem;
   max-width: var(--input-width);
 `;
+
+export const ErrorWrapper = styled.div`
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+`;
