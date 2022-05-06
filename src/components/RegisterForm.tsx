@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { RegisterParams } from "../api/auth.api";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
 import { Form, Label } from "../ui/form/Form";
@@ -10,7 +11,7 @@ import {
 } from "../utils/forms";
 
 export type Props = {
-  onSubmit: () => void;
+  onSubmit: (values: RegisterParams) => Promise<void>;
 };
 
 const RegisterForm = ({ onSubmit }: Props) => {

@@ -16,7 +16,7 @@ export type AuthContextState = UserData & {
 };
 
 export type AuthContextType = {
-  register: (params: RegisterParams) => Promise<unknown>;
+  register: (params: RegisterParams) => Promise<void | ErrorPayload>;
   login: (params: LoginParams) => Promise<void | ErrorPayload>;
 } & AuthContextState;
 
@@ -38,16 +38,17 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     return { ...initialState, token: storedToken || null };
   });
 
-  const handleRegister = async (params: RegisterParams) => {
+  const handleRegister = async (
+    params: RegisterParams
+  ): Promise<void | ErrorPayload> => {
     const result = await register(params);
 
     if (result.status === HTTPStatusCodes.CREATED) {
-      setAuth((prevAuth) => ({
-        ...prevAuth,
-        user: (result as ResponsePayload<User>).data,
-      }));
+      return;
     }
+    return result as ErrorPayload;
   };
+
   const handleLogin = async (
     params: LoginParams
   ): Promise<void | ErrorPayload> => {
