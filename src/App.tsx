@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContextProvider } from "./context/auth.context";
 import Authenticate from "./pages/Authenticate";
+import ErrorForm from "./pages/ErrorForm";
 import StyleGuide from "./pages/StyleGuide";
 import { Error } from "./ui/Error";
 import Layout from "./ui/Layout";
@@ -52,10 +53,7 @@ function App() {
               }
             />
             <Route path="styleguide" element={<StyleGuide />} />
-            <Route
-              path="*"
-              element={<Error size="xl">404 | Not found</Error>}
-            />
+            <Route path="*" element={<ErrorForm />} />
           </Routes>
         </BrowserRouter>
       </AuthContextProvider>

@@ -1,0 +1,10 @@
+.error {
+  align-self: center;
+  width: 70vw;
+  border-radius: 50%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

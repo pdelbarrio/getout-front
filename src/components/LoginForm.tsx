@@ -8,16 +8,17 @@ import { emailValidation, passwordValidation } from "../utils/forms";
 
 export type Props = {
   onSubmit: (values: LoginParams) => Promise<void>;
+  userEmail: string;
 };
 
-const LoginForm = ({ onSubmit }: Props) => {
+const LoginForm = ({ onSubmit, userEmail }: Props) => {
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      email: "",
+      email: userEmail,
       password: "",
     },
   });
