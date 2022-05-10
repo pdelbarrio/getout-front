@@ -5,7 +5,7 @@ import { Error } from "../ui/Error";
 import { Input } from "../ui/form/Input";
 import { Spot } from "../ui/Spot";
 import { Tag, TagGroup } from "../ui/Tag";
-import sampleSpot from "../../public/samplespot.jpg";
+import sampleSpot from "/samplespot.jpg";
 
 const StyleGuide = () => {
   return (
