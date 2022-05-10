@@ -58,3 +58,26 @@ export const login = async (
     } as ErrorPayload;
   }
 };
+export const getUserData = async (
+  token: string
+): Promise<ResponsePayload<User> | ErrorPayload> => {
+  try {
+    const response = await authAxios.get<{ data: User }>("users", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return {
+      status: response.status,
+      data: response.data.data,
+    };
+  } catch (error) {
+    const { status, data } = (error as AxiosError).response as ErrorResponse;
+
+    return {
+      status,
+      message: data,
+    } as ErrorPayload;
+  }
+};

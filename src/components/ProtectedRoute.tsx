@@ -3,9 +3,13 @@ import { Navigate, PathRouteProps, Route } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const { authenticated } = useContext(AuthContext);
+  const { authenticated, loading } = useContext(AuthContext);
 
-  return authenticated ? <>children</> : <Navigate to="/" />;
+  if (loading) {
+    return <h3>Loading...</h3>;
+  }
+
+  return authenticated ? <>{children}</> : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;

@@ -3,6 +3,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContextProvider } from "./context/auth.context";
 import Authenticate from "./pages/Authenticate";
 import ErrorForm from "./pages/ErrorForm";
+import Spots from "./pages/Spots";
 import StyleGuide from "./pages/StyleGuide";
 import { Error } from "./ui/Error";
 import Layout from "./ui/Layout";
@@ -16,7 +17,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<Authenticate />} />
-            <Route path="edit" element={<Navigate to="/" />}>
+            <Route path="edit">
               <Route
                 path="profile"
                 element={
@@ -48,7 +49,7 @@ function App() {
               path="spots"
               element={
                 <ProtectedRoute>
-                  <h1>SPOTS</h1>
+                  <Spots />
                 </ProtectedRoute>
               }
             />

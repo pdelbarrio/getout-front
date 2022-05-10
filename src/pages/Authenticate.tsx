@@ -23,8 +23,6 @@ const Authenticate = () => {
   const { user, login, register } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  //TODO: Create a HOC to handle NON AUTH routes
-
   useEffect(() => {
     if (user) {
       navigate("/styleguide");
