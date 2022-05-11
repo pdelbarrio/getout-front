@@ -7,6 +7,7 @@ export const Tag = styled.button`
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
+  max-width: 100px;
 `;
 
 export const TagGroup = styled.div`

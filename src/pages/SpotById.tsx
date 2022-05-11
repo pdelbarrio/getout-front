@@ -1,19 +1,15 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { spots } from "../mocks/spots";
-import { Spot } from "../ui/Spot";
+import { SingleSpot } from "../ui/Spot";
 import { Tag } from "../ui/Tag";
-import backButton from "../../public/goback.png";
-import "./spotbyid.css";
+import backButton from "/goback.png";
 
 const SpotById = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
   const result = spots.filter(({ _id: v }) => v == id);
-
-  console.log(id);
-  console.log(result);
 
   const handleClick = (e: any) => {
     e.preventDefault();
@@ -23,12 +19,12 @@ const SpotById = () => {
   return (
     <div>
       {result.map((spot) => (
-        <Spot>
+        <SingleSpot key={spot._id}>
           <h3>{spot.name}</h3>
           <img src={spot.images} alt={spot.name} />
-          <h3>
+          <h4>
             added by <span>@{spot.uploader.username}</span>
-          </h3>
+          </h4>
           <p>{spot.description}</p>
           <h4>url</h4>
           <a target="_blank" href={spot.website}>
@@ -42,7 +38,7 @@ const SpotById = () => {
           <a href="#" onClick={handleClick}>
             <img className="back" src={backButton} alt="back button" />
           </a>
-        </Spot>
+        </SingleSpot>
       ))}
     </div>
   );
