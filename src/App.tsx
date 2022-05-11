@@ -2,8 +2,10 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContextProvider } from "./context/auth.context";
 import Authenticate from "./pages/Authenticate";
+import Categories from "./pages/Categories";
 import ErrorForm from "./pages/ErrorForm";
 import Spots from "./pages/Spots";
+import SpotsByCategory from "./pages/SpotsByCategory";
 import StyleGuide from "./pages/StyleGuide";
 import { Error } from "./ui/Error";
 import Layout from "./ui/Layout";
@@ -50,6 +52,22 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Spots />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/categories"
+              element={
+                <ProtectedRoute>
+                  <Categories />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/spots/:type"
+              element={
+                <ProtectedRoute>
+                  <SpotsByCategory />
                 </ProtectedRoute>
               }
             />

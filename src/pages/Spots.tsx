@@ -2,7 +2,7 @@ import { spots } from "../mocks/spots";
 import { Spot } from "../ui/Spot";
 import { Tag, TagGroup } from "../ui/Tag";
 
-const Spots = () => {
+const SpotById = () => {
   return (
     <div>
       <h1>Spots</h1>
@@ -32,4 +32,4 @@ const Spots = () => {
   );
 };
 
-export default Spots;
+export default SpotById;
