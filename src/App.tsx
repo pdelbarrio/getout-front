@@ -4,7 +4,7 @@ import { AuthContextProvider } from "./context/auth.context";
 import Authenticate from "./pages/Authenticate";
 import Categories from "./pages/Categories";
 import ErrorForm from "./pages/ErrorForm";
-import Spots from "./pages/Spots";
+import SpotById from "./pages/SpotById";
 import SpotsByCategory from "./pages/SpotsByCategory";
 import StyleGuide from "./pages/StyleGuide";
 import { Error } from "./ui/Error";
@@ -48,14 +48,6 @@ function App() {
             />
             {/* /* TODO: FIX ROUTES OF SPOTS BY CATEGORY  */}
             <Route
-              path="spots"
-              element={
-                <ProtectedRoute>
-                  <Spots />
-                </ProtectedRoute>
-              }
-            />
-            <Route
               path="/categories"
               element={
                 <ProtectedRoute>
@@ -71,6 +63,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/spot/:id" element={<SpotById />} />
             <Route path="styleguide" element={<StyleGuide />} />
             <Route path="*" element={<ErrorForm />} />
           </Routes>
