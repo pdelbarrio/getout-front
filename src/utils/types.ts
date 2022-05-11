@@ -81,8 +81,8 @@ export const categories: Category[] = [
   },
   {
     id: 10,
-    name: "Arquitecture",
-    slug: "arquictecture",
+    name: "Architecture",
+    slug: "architecture",
     image:
       "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",

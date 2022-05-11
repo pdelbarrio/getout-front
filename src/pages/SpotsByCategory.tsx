@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const SpotsByCategory = () => {
-  const { type } = useParams;
+  const { type } = useParams<{ type?: string }>();
   return (
     <div>
       <h1>SpotsByCategory</h1>
