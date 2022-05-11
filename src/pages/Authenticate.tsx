@@ -25,7 +25,7 @@ const Authenticate = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/styleguide");
+      navigate("/categories");
     }
   }, [user]);
 
