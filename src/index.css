@@ -146,3 +146,7 @@ textarea,
 select {
   font-size: 1rem;
 }
+
+textarea {
+  font-family: "Roboto", sans-serif;
+}

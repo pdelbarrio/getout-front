@@ -98,6 +98,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         ...prevAuth,
         user,
         token,
+        authenticated: true,
       }));
     }
 

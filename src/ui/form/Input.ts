@@ -20,3 +20,19 @@ export const Input = styled.input<{ hasError: boolean }>`
     color: var(--grey);
   }
 `;
+
+export const TextArea = styled.textarea<{ hasError: boolean }>`
+  color: var(--dark);
+  padding: var(--padding-xs);
+  border: 2px solid var(--grey);
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;
+  max-width: var(--input-width);
+
+  ${({ hasError }) => (hasError ? errorInput : "")}
+
+  &:placeholder {
+    color: var(--grey);
+  }
+`;

@@ -16,6 +16,13 @@ export const emailValidation: RegisterOptions = {
   },
 };
 
+export const requiredValidation: RegisterOptions = {
+  required: {
+    value: true,
+    message: "this field is required",
+  },
+};
+
 export const passwordValidation: RegisterOptions = {
   required: {
     value: true,

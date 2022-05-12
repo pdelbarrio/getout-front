@@ -5,9 +5,9 @@ import Authenticate from "./pages/Authenticate";
 import Categories from "./pages/Categories";
 import ErrorForm from "./pages/ErrorForm";
 import SpotById from "./pages/SpotById";
+import SpotFormPage from "./pages/SpotFormPage";
 import SpotsByCategory from "./pages/SpotsByCategory";
 import StyleGuide from "./pages/StyleGuide";
-import { Error } from "./ui/Error";
 import Layout from "./ui/Layout";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
                 path="spot"
                 element={
                   <ProtectedRoute>
-                    <h1>Edit Spot</h1>
+                    <SpotFormPage />
                   </ProtectedRoute>
                 }
               />

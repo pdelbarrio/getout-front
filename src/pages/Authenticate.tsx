@@ -20,14 +20,14 @@ const Authenticate = () => {
   const [userEmail, setUserEmail] = useState("");
   const [formVariant, setFormVariant] = useState<"register" | "login">("login");
   const [formError, setFormError] = useState<string | null>(null);
-  const { user, login, register } = useContext(AuthContext);
+  const { login, register, authenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
+    if (authenticated) {
       navigate("/categories");
     }
-  }, [user]);
+  }, [authenticated]);
 
   const handleLogin = async (values: LoginParams) => {
     const errorPayload = await login(values);

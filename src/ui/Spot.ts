@@ -10,8 +10,10 @@ export const Spot = styled.div`
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--padding-s);
   max-width: 300px;
+  width: 100%;
 
   .go {
     width: 7vw;
@@ -33,7 +35,6 @@ export const Spot = styled.div`
 export const SpotsGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
-
   gap: var(--padding-xs);
 `;
 
