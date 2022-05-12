@@ -27,7 +27,21 @@ export const TextArea = styled.textarea<{ hasError: boolean }>`
   border: 2px solid var(--grey);
   border-radius: 10px;
   width: 100%;
-  height: 200px;
+  max-width: var(--input-width);
+
+  ${({ hasError }) => (hasError ? errorInput : "")}
+
+  &:placeholder {
+    color: var(--grey);
+  }
+`;
+
+export const Select = styled.select<{ hasError?: boolean }>`
+  color: var(--dark);
+  padding: var(--padding-xs);
+  border: 2px solid var(--grey);
+  border-radius: var(--border-radius);
+  width: 100%;
   max-width: var(--input-width);
 
   ${({ hasError }) => (hasError ? errorInput : "")}

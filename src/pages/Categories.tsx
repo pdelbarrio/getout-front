@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { categories } from "../utils/types";
+import { CATEGORIES } from "../constants/categories";
 
 const Categories = () => {
   return (
     <div>
-      {categories.map((type) => (
+      {CATEGORIES.map((type) => (
         <ul>
           <li>
             <Link to={`/spots/${type.slug}`}>

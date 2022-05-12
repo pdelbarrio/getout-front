@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
+import { CATEGORIES } from "../constants/categories";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
 import { Form, Label } from "../ui/form/Form";
-import { Input, TextArea } from "../ui/form/Input";
+import { Input, Select, TextArea } from "../ui/form/Input";
 import { requiredValidation } from "../utils/forms";
 
 export type SpotParams = {
@@ -50,6 +51,7 @@ const SpotForm = ({ onSubmit }: Props) => {
 
       <Label>
         <TextArea
+          rows={10}
           hasError={!!errors.description}
           placeholder="description of the spot"
           {...register("description", requiredValidation)}
@@ -69,6 +71,23 @@ const SpotForm = ({ onSubmit }: Props) => {
         />
 
         {errors.website ? <Error>{errors.website.message}</Error> : null}
+      </Label>
+
+      <Label>
+        <Select
+          hasError={!!errors.category}
+          {...register("category", requiredValidation)}
+          defaultValue=""
+        >
+          <option value="">Category</option>
+          {CATEGORIES.map((category) => (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </Select>
+
+        {errors.category ? <Error>{errors.category.message}</Error> : null}
       </Label>
 
       <Label>
