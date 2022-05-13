@@ -9,7 +9,7 @@ import { requiredValidation } from "../utils/forms";
 export type SpotParams = {
   name: string;
   description: string;
-  image: string;
+  image?: string;
   website: string;
   category: string;
   location: string;

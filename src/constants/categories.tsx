@@ -6,7 +6,7 @@ export const CATEGORIES: Category[] = [
     name: "Live Music",
     slug: "live-music",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -14,7 +14,7 @@ export const CATEGORIES: Category[] = [
     name: "Food",
     slug: "food",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -22,7 +22,7 @@ export const CATEGORIES: Category[] = [
     name: "Shops",
     slug: "shops",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -30,7 +30,7 @@ export const CATEGORIES: Category[] = [
     name: "Stand Up",
     slug: "stand-up",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -38,7 +38,7 @@ export const CATEGORIES: Category[] = [
     name: "Cinema",
     slug: "cinema",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -46,7 +46,7 @@ export const CATEGORIES: Category[] = [
     name: "Views",
     slug: "views",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -54,7 +54,7 @@ export const CATEGORIES: Category[] = [
     name: "Silence",
     slug: "silence",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -62,7 +62,7 @@ export const CATEGORIES: Category[] = [
     name: "Weird",
     slug: "weird",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -70,7 +70,7 @@ export const CATEGORIES: Category[] = [
     name: "Art",
     slug: "art",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -78,7 +78,7 @@ export const CATEGORIES: Category[] = [
     name: "Architecture",
     slug: "architecture",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
   {
@@ -86,7 +86,7 @@ export const CATEGORIES: Category[] = [
     name: "Random",
     slug: "random",
     image:
-      "https://res.cloudinary.com/parkfinder/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
     description: "Lorem ipsum",
   },
 ];

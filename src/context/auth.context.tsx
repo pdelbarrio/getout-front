@@ -43,6 +43,7 @@ export const AuthContext = createContext<AuthContextType>({
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const [auth, setAuth] = useState<AuthContextState>(() => {
     const storedToken = getTokenFromLocalStorage();
+
     return { ...initialState, token: storedToken || null };
   });
   const [loading, setLoading] = useState(() => !!auth.token);
@@ -66,6 +67,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
       }
       setLoading(false);
     }
+
     if (auth.token) {
       getUser();
     }

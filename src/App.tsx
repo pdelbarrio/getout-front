@@ -1,6 +1,7 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContextProvider } from "./context/auth.context";
+import { SpotContextProvider } from "./context/spot.context";
 import Authenticate from "./pages/Authenticate";
 import Categories from "./pages/Categories";
 import ErrorForm from "./pages/ErrorForm";
@@ -15,59 +16,60 @@ function App() {
     <Layout>
       <AuthContextProvider>
         {/* TODO: ADD CONDITIONAL NAV */}
+        <SpotContextProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route index element={<Authenticate />} />
+              <Route path="edit">
+                <Route
+                  path="profile"
+                  element={
+                    <ProtectedRoute>
+                      <h1>Edit Profile</h1>
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="spot"
+                  element={
+                    <ProtectedRoute>
+                      <SpotFormPage />
+                    </ProtectedRoute>
+                  }
+                />
+              </Route>
 
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Authenticate />} />
-            <Route path="edit">
               <Route
-                path="profile"
+                path="new-spot"
                 element={
                   <ProtectedRoute>
-                    <h1>Edit Profile</h1>
+                    <h1>NEW SPOT</h1>
+                  </ProtectedRoute>
+                }
+              />
+              {/* /* TODO: FIX ROUTES OF SPOTS BY CATEGORY  */}
+              <Route
+                path="/categories"
+                element={
+                  <ProtectedRoute>
+                    <Categories />
                   </ProtectedRoute>
                 }
               />
               <Route
-                path="spot"
+                path="/spots/:type"
                 element={
                   <ProtectedRoute>
-                    <SpotFormPage />
+                    <SpotsByCategory />
                   </ProtectedRoute>
                 }
               />
-            </Route>
-
-            <Route
-              path="new-spot"
-              element={
-                <ProtectedRoute>
-                  <h1>NEW SPOT</h1>
-                </ProtectedRoute>
-              }
-            />
-            {/* /* TODO: FIX ROUTES OF SPOTS BY CATEGORY  */}
-            <Route
-              path="/categories"
-              element={
-                <ProtectedRoute>
-                  <Categories />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/spots/:type"
-              element={
-                <ProtectedRoute>
-                  <SpotsByCategory />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/spot/:id" element={<SpotById />} />
-            <Route path="styleguide" element={<StyleGuide />} />
-            <Route path="*" element={<ErrorForm />} />
-          </Routes>
-        </BrowserRouter>
+              <Route path="/spot/:id" element={<SpotById />} />
+              <Route path="styleguide" element={<StyleGuide />} />
+              <Route path="*" element={<ErrorForm />} />
+            </Routes>
+          </BrowserRouter>
+        </SpotContextProvider>
       </AuthContextProvider>
     </Layout>
   );
