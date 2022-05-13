@@ -1,10 +1,16 @@
+import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { spots } from "../mocks/spots";
+import { SpotContext } from "../context/spot.context";
 import { Spot, SpotsGroup } from "../ui/Spot";
 import goButton from "/go.png";
 
 const SpotsByCategory = () => {
+  const { getSpots, spots } = useContext(SpotContext);
   const { type } = useParams<{ type?: string }>();
+
+  useEffect(() => {
+    getSpots();
+  }, []);
 
   const result = spots.filter(({ category: v }) => v == type);
 

@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { spots } from "../mocks/spots";
+import { SpotContext } from "../context/spot.context";
 import { SingleSpot } from "../ui/Spot";
 import { Tag } from "../ui/Tag";
 import backButton from "/goback.png";
 
 const SpotById = () => {
+  const { getSpots, spots } = useContext(SpotContext);
   const navigate = useNavigate();
   const { id } = useParams();
+
+  useEffect(() => {
+    getSpots();
+  }, []);
 
   const result = spots.filter(({ _id: v }) => v == id);
 

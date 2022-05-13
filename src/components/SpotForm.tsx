@@ -81,7 +81,7 @@ const SpotForm = ({ onSubmit }: Props) => {
         >
           <option value="">Category</option>
           {CATEGORIES.map((category) => (
-            <option key={category.id} value={category.name}>
+            <option key={category.id} value={category.slug}>
               {category.name}
             </option>
           ))}

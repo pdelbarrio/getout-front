@@ -1,4 +1,5 @@
 export type Spot = {
+  _id: string;
   name: string;
   description: string;
   images: string;
@@ -13,4 +14,7 @@ export type Spot = {
   //   likes: [];
 };
 
-export type SpotFormValues = Omit<Spot, "uploader" | "validated" | "images">;
+export type SpotFormValues = Omit<
+  Spot,
+  "uploader" | "validated" | "images" | "_id"
+>;

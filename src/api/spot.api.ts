@@ -34,3 +34,25 @@ export const create = async (
     } as ErrorPayload;
   }
 };
+
+export const getSpotsFromAPI = async (
+  axiosInstance: AxiosInstance
+): Promise<ResponsePayload<Spot[]> | ErrorPayload> => {
+  try {
+    const response = await axiosInstance.get<{ data: { spots: Spot[] } }>(
+      "spots"
+    );
+    console.log(response);
+    return {
+      status: response.status,
+      data: response.data.data.spots,
+    };
+  } catch (error) {
+    const { status, data } = (error as AxiosError).response as ErrorResponse;
+
+    return {
+      status,
+      message: data,
+    } as ErrorPayload;
+  }
+};
