@@ -1,18 +1,21 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import SpotForm, { SpotParams } from "../components/SpotForm";
 import { SpotContext } from "../context/spot.context";
 
 const SpotFormPage = () => {
   const { createSpot } = useContext(SpotContext);
+  const navigate = useNavigate();
   return (
     <div>
       <h1>Create your spot</h1>
       <SpotForm
         onSubmit={async (values: SpotParams) => {
-          console.log(values);
-          console.log("Submitting Spot");
           createSpot(values).then((status: boolean) => {
-            console.log("Callback", status);
+            // TODO: for now to redirect to categories until I implement the spot moderation system
+            if (status) {
+              navigate("/categories");
+            }
           });
         }}
       />

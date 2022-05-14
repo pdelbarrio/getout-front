@@ -31,11 +31,12 @@ export const SpotContextProvider = ({
   const getSpots = async () => {
     const response = await getSpotsFromAPI(axiosInstance);
 
-    console.log(response);
+    console.log("RESPONSE FROM API", response);
 
     if (response.status === HTTPStatusCodes.OK) {
       const newSpots = (response as ResponsePayload<Spot[]>).data;
-      setSpots((prevSpots) => [...prevSpots, ...newSpots]);
+      setSpots(newSpots);
+      // setSpots((prevSpots) => [...prevSpots, ...newSpots]);
       return true;
     }
     //TODO: HandleError
