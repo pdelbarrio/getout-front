@@ -5,6 +5,7 @@ import { Error } from "../ui/Error";
 import { Form, Label } from "../ui/form/Form";
 import { Input, Select, TextArea } from "../ui/form/Input";
 import { requiredValidation } from "../utils/forms";
+import SpotImageUpload from "./SpotImageUpload";
 
 export type SpotParams = {
   name: string;
@@ -38,6 +39,9 @@ const SpotForm = ({ onSubmit }: Props) => {
   // We create onSubmit as props to make the father component (where <LoginForm/> is ) control the submit
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
+      <Label>
+        <SpotImageUpload />
+      </Label>
       <Label>
         <Input
           hasError={!!errors.name}

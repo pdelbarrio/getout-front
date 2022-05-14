@@ -5,7 +5,7 @@ const Categories = () => {
   return (
     <div>
       {CATEGORIES.map((type) => (
-        <ul>
+        <ul key={type.id}>
           <li>
             <Link to={`/spots/${type.slug}`}>
               <img src={type.image} alt={type.name} />
