@@ -33,7 +33,7 @@ function App() {
                   path="spot"
                   element={
                     <ProtectedRoute>
-                      <SpotFormPage />
+                      <h1>edit spot</h1>
                     </ProtectedRoute>
                   }
                 />
@@ -43,11 +43,11 @@ function App() {
                 path="new-spot"
                 element={
                   <ProtectedRoute>
-                    <h1>NEW SPOT</h1>
+                    <SpotFormPage />
                   </ProtectedRoute>
                 }
               />
-              {/* /* TODO: FIX ROUTES OF SPOTS BY CATEGORY  */}
+
               <Route
                 path="/categories"
                 element={

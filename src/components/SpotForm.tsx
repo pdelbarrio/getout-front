@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { CATEGORIES } from "../constants/categories";
 import { Button } from "../ui/Button";
@@ -10,7 +11,7 @@ import SpotImageUpload from "./SpotImageUpload";
 export type SpotParams = {
   name: string;
   description: string;
-  image?: string;
+  image: string;
   website: string;
   category: string;
   location: string;
@@ -21,26 +22,41 @@ export type Props = {
 };
 
 const SpotForm = ({ onSubmit }: Props) => {
+  const [imageOfSpot, setImageOfSpot] = useState<string>("");
+
   const {
     handleSubmit,
     register,
+    setValue,
     formState: { errors },
   } = useForm({
     defaultValues: {
       name: "",
       description: "",
-      image: "",
+      image:
+        "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
       website: "",
       category: "",
       location: "",
     },
   });
 
+  useEffect(() => {
+    setValue("image", imageOfSpot);
+    console.log(imageOfSpot);
+  }, [imageOfSpot]);
+
+  const updateImage = (imageUrl: string): void => {
+    setImageOfSpot(imageUrl);
+  };
+
   // We create onSubmit as props to make the father component (where <LoginForm/> is ) control the submit
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
+      {imageOfSpot && <img src={imageOfSpot} alt="spot preview" />}
       <Label>
-        <SpotImageUpload />
+        <SpotImageUpload updateImage={updateImage} />
+        <input type="hidden" {...register("image")} />
       </Label>
       <Label>
         <Input

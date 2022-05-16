@@ -12,7 +12,6 @@ const SpotFormPage = () => {
       <SpotForm
         onSubmit={async (values: SpotParams) => {
           createSpot(values).then((status: boolean) => {
-            // TODO: for now to redirect to categories until I implement the spot moderation system
             if (status) {
               navigate("/categories");
             }

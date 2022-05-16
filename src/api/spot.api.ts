@@ -42,7 +42,7 @@ export const getSpotsFromAPI = async (
     const response = await axiosInstance.get<{ data: { spots: Spot[] } }>(
       "spots"
     );
-    console.log(response);
+
     return {
       status: response.status,
       data: response.data.data.spots,

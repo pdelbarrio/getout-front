@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Navigate, PathRouteProps, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {

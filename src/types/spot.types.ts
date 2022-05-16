@@ -2,7 +2,7 @@ export type Spot = {
   _id: string;
   name: string;
   description: string;
-  images: string;
+  image: string;
   website: string;
   validated: boolean;
   category: string;

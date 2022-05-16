@@ -26,7 +26,7 @@ const SpotById = () => {
       {result.map((spot) => (
         <SingleSpot key={spot._id}>
           <h3>{spot.name}</h3>
-          <img src={spot.images} alt={spot.name} />
+          <img src={spot.image} alt={spot.name} />
           <h4>
             added by <span>@{spot.uploader.username}</span>
           </h4>
