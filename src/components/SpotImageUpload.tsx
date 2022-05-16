@@ -29,10 +29,6 @@ const SpotImageUpload = ({ updateImage }: Props) => {
   return (
     <div>
       <div>
-        <div>
-          <h1></h1>
-          {/* <img src={url} /> */}
-        </div>
         <input
           type="file"
           onChange={(e) => setImage(e.target.files[0])}

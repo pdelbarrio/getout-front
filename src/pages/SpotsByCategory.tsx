@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { CATEGORIES } from "../constants/categories";
 import { SpotContext } from "../context/spot.context";
 import { Spot, SpotsGroup } from "../ui/Spot";
 import goButton from "/go.png";
@@ -13,12 +14,21 @@ const SpotsByCategory = () => {
   }, []);
 
   const result = spots.filter(({ category: v }) => v == type);
+  const description = CATEGORIES.filter((item) => item.slug == type).map(
+    (item) => item.description
+  );
+
+  const nameOfCategory = CATEGORIES.filter((item) => item.slug == type).map(
+    (item) => item.name
+  );
 
   return (
     <div>
-      <h3>SpotsByCategory</h3>
-      {type}
-      <p>Description of category??</p>
+      <Link to={"/categories"}>
+        <p>back</p>
+      </Link>
+      <h2>{nameOfCategory}</h2>
+      <p>{description}</p>
       <SpotsGroup>
         {result.map((spot) => (
           <Spot key={spot._id}>

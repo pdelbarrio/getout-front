@@ -7,7 +7,8 @@ export const CATEGORIES: Category[] = [
     slug: "live-music",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description:
+      "Concert venues, small places, squatters with good vibes and good sound and so on",
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const CATEGORIES: Category[] = [
     slug: "food",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description:
+      "This is not for fans of El Bulli. Better some cheap patatas bravas and generous sandwiches than to spend a lot of money and go hungry.",
   },
   {
     id: 3,
@@ -23,7 +25,7 @@ export const CATEGORIES: Category[] = [
     slug: "shops",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "Capitalism sucks but there are stores that sell cool stuff.",
   },
   {
     id: 4,
@@ -31,7 +33,7 @@ export const CATEGORIES: Category[] = [
     slug: "stand-up",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "Stand up has become trendy, but we need to laugh!",
   },
   {
     id: 5,
@@ -39,7 +41,7 @@ export const CATEGORIES: Category[] = [
     slug: "cinema",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "No blockbusters please",
   },
   {
     id: 6,
@@ -47,7 +49,7 @@ export const CATEGORIES: Category[] = [
     slug: "views",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "The name says it all, views",
   },
   {
     id: 7,
@@ -55,7 +57,8 @@ export const CATEGORIES: Category[] = [
     slug: "silence",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description:
+      "It is difficult to find silence in the city, but let's find out",
   },
   {
     id: 8,
@@ -63,7 +66,7 @@ export const CATEGORIES: Category[] = [
     slug: "weird",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "Whatever",
   },
   {
     id: 9,
@@ -71,7 +74,7 @@ export const CATEGORIES: Category[] = [
     slug: "art",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "Art galleries and the like",
   },
   {
     id: 10,
@@ -79,7 +82,7 @@ export const CATEGORIES: Category[] = [
     slug: "architecture",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "E difisi",
   },
   {
     id: 11,
@@ -87,6 +90,6 @@ export const CATEGORIES: Category[] = [
     slug: "random",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    description: "Lorem ipsum",
+    description: "Not places",
   },
 ];
