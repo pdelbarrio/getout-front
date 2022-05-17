@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 
-export type ImageSizes = "s" | "m";
+export type ImageSizes = "xs" | "s" | "m";
 
 const imageWidthBySize = {
+  xs: "width: 50px",
   s: "width: 120px",
   m: "width: 240px",
 };

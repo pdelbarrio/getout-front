@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const NavbarWrapper = styled.header`
-  background-color: var(--violet);
+  background-color: var(--white);
   width: 100%;
   padding: var(--padding-m) var(--padding-s);
   display: flex;

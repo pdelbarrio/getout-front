@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthContextProvider } from "./context/auth.context";
+import { AuthContext, AuthContextProvider } from "./context/auth.context";
 import { SpotContextProvider } from "./context/spot.context";
 import Authenticate from "./pages/Authenticate";
 import Categories from "./pages/Categories";
@@ -19,11 +19,9 @@ function App() {
     <>
       <Layout>
         <AuthContextProvider>
-          {/* TODO: ADD CONDITIONAL NAV */}
           <SpotContextProvider>
-            <Navbar />
-
             <BrowserRouter>
+              <Navbar />
               <Routes>
                 <Route index element={<Authenticate />} />
                 <Route path="edit">
@@ -55,7 +53,7 @@ function App() {
                 />
 
                 <Route
-                  path="/categories"
+                  path="categories"
                   element={
                     <ProtectedRoute>
                       <Categories />
@@ -63,7 +61,7 @@ function App() {
                   }
                 />
                 <Route
-                  path="/spots/:type"
+                  path="spots/:type"
                   element={
                     <ProtectedRoute>
                       <SpotsByCategory />
@@ -71,7 +69,7 @@ function App() {
                   }
                 />
                 <Route
-                  path="/spot/:id"
+                  path="spot/:id"
                   element={
                     <ProtectedRoute>
                       <SpotById />
