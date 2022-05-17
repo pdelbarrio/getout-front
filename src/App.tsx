@@ -12,7 +12,7 @@ import StyleGuide from "./pages/StyleGuide";
 import Layout from "./ui/Layout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
