@@ -22,6 +22,9 @@ const SpotsByCategory = () => {
     (item) => item.name
   );
 
+  const defaultImage =
+    "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg";
+
   return (
     <div>
       <Link to={"/categories"}>
@@ -33,7 +36,12 @@ const SpotsByCategory = () => {
         {result.map((spot) => (
           <Spot key={spot._id}>
             <h3>{spot.name}</h3>
-            <img src={spot.image} alt={spot.name} />
+            {spot.image == "" ? (
+              <img src={defaultImage} alt={spot.name} />
+            ) : (
+              <img src={spot.image} alt={spot.name} />
+            )}
+
             <Link to={`/spot/${spot._id}`}>
               <img className="go" src={goButton} alt="go" />
             </Link>

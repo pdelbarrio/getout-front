@@ -25,5 +25,11 @@ export type Spot = {
 
 export type SpotFormValues = Omit<
   Spot,
-  "uploader" | "validated" | "images" | "_id" | "createdAt" | "updatedAt"
+  | "uploader"
+  | "validated"
+  | "images"
+  | "_id"
+  | "createdAt"
+  | "updatedAt"
+  | "likes"
 >;

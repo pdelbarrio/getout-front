@@ -21,12 +21,19 @@ const SpotById = () => {
     navigate(-1);
   };
 
+  const defaultImage =
+    "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg";
+
   return (
     <div>
       {result.map((spot) => (
         <SingleSpot key={spot._id}>
           <h3>{spot.name}</h3>
-          <img src={spot.image} alt={spot.name} />
+          {spot.image == "" ? (
+            <img src={defaultImage} alt={spot.name} />
+          ) : (
+            <img src={spot.image} alt={spot.name} />
+          )}
           <h4>
             added by <span>@{spot.uploader.username}</span>
           </h4>
