@@ -8,10 +8,19 @@ export type Spot = {
   category: string;
   location: string;
   uploader: {
-    id: string;
+    _id: string;
     username: string;
+    email: string;
+    avatar: string;
+    isAdmin: boolean;
+    spots?: string[];
+    favSpots?: string[];
+    createdAt: string;
+    updatedAt: string;
   };
-  //   likes: [];
+  likes?: string[];
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type SpotFormValues = Omit<

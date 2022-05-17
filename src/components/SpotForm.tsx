@@ -53,11 +53,14 @@ const SpotForm = ({ onSubmit }: Props) => {
   // We create onSubmit as props to make the father component (where <LoginForm/> is ) control the submit
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {imageOfSpot && <img src={imageOfSpot} alt="spot preview" />}
-      <Label>
-        <SpotImageUpload updateImage={updateImage} />
-        <input type="hidden" {...register("image")} />
-      </Label>
+      {imageOfSpot ? (
+        <img src={imageOfSpot} alt="image of spot" />
+      ) : (
+        <Label>
+          <SpotImageUpload updateImage={updateImage} />
+          <input type="hidden" {...register("image")} />
+        </Label>
+      )}
       <Label>
         <Input
           hasError={!!errors.name}

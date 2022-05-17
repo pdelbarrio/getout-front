@@ -3,9 +3,11 @@ import styled from "@emotion/styled";
 export const LoginLayout = styled.div`
   padding-top: 5px;
   display: flex;
+
   flex-direction: column;
   align-items: center;
   gap: 25px;
+  background-color: var(--violet);
 `;
 
 export const FormWrapper = styled.div`

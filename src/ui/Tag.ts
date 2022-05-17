@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Tag = styled.button`
   background-color: var(--dark);
-  color: var(--whitetitle);
+  color: var(--white);
   padding: var(--padding-xs);
   text-align: center;
   border-radius: 5px;

@@ -4,8 +4,7 @@ export const Spot = styled.div`
   background-color: var(--green);
   color: var(--dark);
   padding: var(--padding-s);
-  border: 3px solid;
-  border-style: dashed;
+  border: 2px solid;
   border-radius: 10px;
 
   display: flex;
@@ -39,12 +38,11 @@ export const SpotsGroup = styled.div`
 `;
 
 export const SingleSpot = styled.div`
-  background-color: var(--green);
+  background-color: var(--yellow);
   color: var(--dark);
   padding: var(--padding-s);
-  border: 3px solid;
-  border-style: dashed;
-  border-radius: 10px;
+  border: 2px solid;
+  border-radius: 20px;
 
   display: flex;
   flex-direction: column;
