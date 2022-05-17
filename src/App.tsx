@@ -12,6 +12,7 @@ import StyleGuide from "./pages/StyleGuide";
 import Layout from "./ui/Layout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <AuthContextProvider>
           {/* TODO: ADD CONDITIONAL NAV */}
           <SpotContextProvider>
+            <Navbar />
+
             <BrowserRouter>
               <Routes>
                 <Route index element={<Authenticate />} />
@@ -67,7 +70,14 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
-                <Route path="/spot/:id" element={<SpotById />} />
+                <Route
+                  path="/spot/:id"
+                  element={
+                    <ProtectedRoute>
+                      <SpotById />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="styleguide" element={<StyleGuide />} />
                 <Route path="*" element={<ErrorForm />} />
               </Routes>
@@ -76,7 +86,7 @@ function App() {
         </AuthContextProvider>
       </Layout>
 
-      <ToastContainer />
+      <ToastContainer theme="colored" />
     </>
   );
 }

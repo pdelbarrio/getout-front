@@ -25,6 +25,7 @@ export type AuthContextType = {
   loading: boolean;
   register: (params: RegisterParams) => Promise<void | ErrorPayload>;
   login: (params: LoginParams) => Promise<void | ErrorPayload>;
+  logout: () => void;
 } & AuthContextState;
 
 const initialState = {
@@ -38,6 +39,7 @@ export const AuthContext = createContext<AuthContextType>({
   loading: false,
   register: async () => {},
   login: async () => {},
+  logout: () => {},
 });
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
@@ -105,6 +107,11 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     return result as ErrorPayload;
   };
 
+  const handleLogout = () => {
+    setTokenToLocalStorage("");
+    setAuth(initialState);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -112,6 +119,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         loading,
         register: handleRegister,
         login: handleLogin,
+        logout: handleLogout,
       }}
     >
       {children}

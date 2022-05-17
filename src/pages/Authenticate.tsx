@@ -6,20 +6,19 @@ import RegisterForm from "../components/RegisterForm";
 import { AuthContext } from "../context/auth.context";
 import { Button } from "../ui/Button";
 import {
-  ErrorWrapper,
   FormWrapper,
   LoginLayout,
   ToggleWrapper,
 } from "../ui/layouts/LoginLayout";
 import "./video.css";
 import bgVideo from "../video/bgvideo.mp4";
-import { Error } from "../ui/Error";
 import { useNavigate } from "react-router-dom";
+import { setErrorToast } from "../utils/toasts";
 
 const Authenticate = () => {
   const [userEmail, setUserEmail] = useState("");
   const [formVariant, setFormVariant] = useState<"register" | "login">("login");
-  const [formError, setFormError] = useState<string | null>(null);
+
   const { login, register, authenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -33,7 +32,7 @@ const Authenticate = () => {
     const errorPayload = await login(values);
 
     if (errorPayload) {
-      setFormError(errorPayload.message);
+      setErrorToast(errorPayload.message);
     }
   };
 
@@ -41,7 +40,7 @@ const Authenticate = () => {
     const errorPayload = await register(values);
 
     if (errorPayload) {
-      setFormError(errorPayload.message);
+      setErrorToast(errorPayload.message);
     } else {
       setUserEmail(values.email);
       setFormVariant("login");
@@ -70,12 +69,6 @@ const Authenticate = () => {
             Login
           </Button>
         </ToggleWrapper>
-
-        {formError ? (
-          <ErrorWrapper>
-            <Error>{formError}</Error>
-          </ErrorWrapper>
-        ) : null}
 
         {formVariant === "register" ? (
           <RegisterForm onSubmit={handleRegister} />

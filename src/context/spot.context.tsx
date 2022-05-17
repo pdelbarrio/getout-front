@@ -2,10 +2,12 @@ import React, { createContext, useContext, useMemo, useState } from "react";
 import { create, getSpotAxios, getSpotsFromAPI } from "../api/spot.api";
 import { HTTPStatusCodes, ResponsePayload } from "../types/request.types";
 import { Spot, SpotFormValues } from "../types/spot.types";
+import { setErrorToast } from "../utils/toasts";
 import { AuthContext } from "./auth.context";
 
 export type SpotContextType = {
   spots: Spot[];
+  loading: boolean;
   page: number;
   getSpots: () => Promise<boolean>;
   createSpot: (values: SpotFormValues) => Promise<boolean>;
@@ -14,6 +16,7 @@ export type SpotContextType = {
 export const SpotContext = createContext<SpotContextType>({
   spots: [],
   page: 1,
+  loading: false,
   getSpots: async () => false,
   createSpot: async () => false,
 });
@@ -24,6 +27,7 @@ export const SpotContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [spots, setSpots] = useState<Spot[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
   const { token } = useContext(AuthContext);
   //Sólo crea la instancia cuando el token cambia
   const axiosInstance = useMemo(() => getSpotAxios(token as string), [token]);
@@ -35,9 +39,11 @@ export const SpotContextProvider = ({
       const newSpots = (response as ResponsePayload<Spot[]>).data;
       setSpots(newSpots);
       // setSpots((prevSpots) => [...prevSpots, ...newSpots]);
+      setLoading(false);
       return true;
     }
-    //TODO: HandleError
+    setErrorToast("Error loading spots");
+    setLoading(false);
     return false;
   };
 
@@ -49,7 +55,7 @@ export const SpotContextProvider = ({
     if (response.status === HTTPStatusCodes.CREATED) {
       return true;
     }
-    //TODO: HandleError
+    setErrorToast("Error creating");
     return false;
   };
 
@@ -60,6 +66,7 @@ export const SpotContextProvider = ({
         page: 1,
         createSpot,
         getSpots,
+        loading,
       }}
     >
       {children}
