@@ -10,6 +10,8 @@ export const NavbarWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  border: 2px solid;
+
   img {
     width: 200px;
   }
@@ -72,7 +74,7 @@ export const Ul = styled.ul<{ open: boolean }>`
 
   ${tabletDown} {
     flex-flow: column nowrap;
-    background-color: var(--violet);
+    background-color: var(--lightgrey);
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;

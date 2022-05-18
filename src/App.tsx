@@ -42,6 +42,22 @@ function App() {
                     }
                   />
                 </Route>
+                <Route
+                  path="profile"
+                  element={
+                    <ProtectedRoute>
+                      <h1>MY PROFILE</h1>
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="about-us"
+                  element={
+                    <ProtectedRoute>
+                      <h1>ABOUT US</h1>
+                    </ProtectedRoute>
+                  }
+                />
 
                 <Route
                   path="new-spot"

@@ -1,6 +1,26 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
+export const SpotsWrapper = styled.div`
+  gap: var(--padding-s);
+  padding-left: 30px;
+
+  > h3 {
+    margin: 30px;
+  }
+
+  > p {
+    margin: 30px;
+  }
+`;
+
+export const SpotsGroup = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--padding-xs);
+  justify-content: center;
+`;
+
 export const Spot = styled.div`
   background-color: var(--green);
   color: var(--dark);
@@ -22,10 +42,6 @@ export const Spot = styled.div`
   }
 `;
 
-export const SpotsWrapper = styled.div`
-  gap: var(--padding-s);
-`;
-
 export const StyledLinkGo = styled(Link)`
   text-decoration: none;
   background-color: var(--green);
@@ -45,27 +61,18 @@ export const StyledLinkGo = styled(Link)`
 
 export const StyledLinkBack = styled(Link)`
   text-decoration: none;
-  background-color: var(--green);
   color: var(--dark);
-  padding: var(--padding-s);
+  padding: var(--padding-xs);
   border: 2px solid;
   border-radius: 10px;
   max-width: 100px;
 
   &:hover {
-    background-color: var(--lightgreen);
+    background-color: var(--yellow);
   }
   &:focus {
-    border: 2px solid;
-    background-color: var(--green);
+    background-color: var(--error);
   }
-`;
-
-export const SpotsGroup = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--padding-xs);
-  justify-content: center;
 `;
 
 export const SingleSpot = styled.div`

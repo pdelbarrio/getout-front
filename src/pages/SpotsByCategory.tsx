@@ -32,10 +32,9 @@ const SpotsByCategory = () => {
 
   return (
     <SpotsWrapper>
-      <div>
-        <StyledLinkBack to={"/categories"}>back</StyledLinkBack>
-      </div>
-      <h2>{nameOfCategory}</h2>
+      <StyledLinkBack to={"/categories"}>back</StyledLinkBack>
+
+      <h3>{nameOfCategory}</h3>
       <p>{description}</p>
       <SpotsGroup>
         {result.map((spot) => (
