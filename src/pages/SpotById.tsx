@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { SpotContext } from "../context/spot.context";
-import { SingleSpot } from "../ui/Spot";
+import { ButtonBack, SingleSpot } from "../ui/Spot";
 import { Tag } from "../ui/Tag";
 import backButton from "/goback.png";
 
@@ -47,9 +47,7 @@ const SpotById = () => {
           <h4>location</h4>
           <p>{spot.location}</p>
 
-          <a href="#" onClick={handleClick}>
-            <img className="back" src={backButton} alt="back button" />
-          </a>
+          <ButtonBack onClick={handleClick}>back</ButtonBack>
         </SingleSpot>
       ))}
     </div>

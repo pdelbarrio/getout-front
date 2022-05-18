@@ -2,7 +2,13 @@ import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CATEGORIES } from "../constants/categories";
 import { SpotContext } from "../context/spot.context";
-import { Spot, SpotsGroup, SpotsWrapper, StyledLink } from "../ui/Spot";
+import {
+  Spot,
+  SpotsGroup,
+  SpotsWrapper,
+  StyledLinkBack,
+  StyledLinkGo,
+} from "../ui/Spot";
 
 const SpotsByCategory = () => {
   const { getSpots, spots } = useContext(SpotContext);
@@ -27,21 +33,26 @@ const SpotsByCategory = () => {
   return (
     <SpotsWrapper>
       <div>
-        <StyledLink to={"/categories"}>back</StyledLink>
+        <StyledLinkBack to={"/categories"}>back</StyledLinkBack>
       </div>
       <h2>{nameOfCategory}</h2>
       <p>{description}</p>
       <SpotsGroup>
         {result.map((spot) => (
           <Spot key={spot._id}>
-            <h3>{spot.name}</h3>
+            <h4>{spot.name}</h4>
             {spot.image == "" ? (
               <img src={defaultImage} alt={spot.name} />
             ) : (
               <img src={spot.image} alt={spot.name} />
             )}
 
-            <StyledLink to={`/spot/${spot._id}`}>Go!</StyledLink>
+            <div className="button">
+              <div></div>
+              <div>
+                <StyledLinkGo to={`/spot/${spot._id}`}>Go!</StyledLinkGo>
+              </div>
+            </div>
           </Spot>
         ))}
       </SpotsGroup>
