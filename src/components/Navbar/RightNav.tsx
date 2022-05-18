@@ -14,6 +14,9 @@ const RightNav = ({ open }: Props) => {
   return (
     <Ul open={open}>
       <li>
+        <Link to="/categories">Categories</Link>
+      </li>
+      <li>
         <Link to="/new-spot">New Spot</Link>
       </li>
       <li>

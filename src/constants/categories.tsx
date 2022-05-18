@@ -6,7 +6,7 @@ export const CATEGORIES: Category[] = [
     name: "Live Music",
     slug: "live-music",
     image:
-      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652811249/getout/categories/livemusic_lxvc85.jpg",
     description:
       "Concert venues, small places, squatters with good vibes and good sound and so on",
   },

@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "../constants/categories";
+import { CategoriesWrapper } from "../ui/Categories";
 
 const Categories = () => {
   return (
-    <div>
+    <CategoriesWrapper>
       {CATEGORIES.map((type) => (
         <ul key={type.id}>
           <li>
             <Link to={`/spots/${type.slug}`}>
               <img src={type.image} alt={type.name} />
-              {type.name}
+              <p>{type.name}</p>
             </Link>
           </li>
         </ul>
       ))}
-    </div>
+    </CategoriesWrapper>
   );
 };
 

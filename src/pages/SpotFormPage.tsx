@@ -25,7 +25,7 @@ const SpotFormPage = () => {
 
   return (
     <FormLayout>
-      <h2>Create your spot</h2>
+      <h3>Create your spot</h3>
 
       <SpotForm onSubmit={submitNewSpot} />
     </FormLayout>

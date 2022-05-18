@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 export const Spot = styled.div`
   background-color: var(--green);
@@ -28,6 +29,28 @@ export const Spot = styled.div`
   a:hover {
     box-shadow: inset 10vw 0 0 0 var(--dark);
     color: white;
+  }
+`;
+
+export const SpotsWrapper = styled.div`
+  gap: var(--padding-s);
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  background-color: var(--green);
+  color: var(--dark);
+  padding: var(--padding-s);
+  border: 2px solid;
+  border-radius: 10px;
+  max-width: 100px;
+
+  &:hover {
+    background-color: var(--lightgreen);
+  }
+  &:focus {
+    border: 2px solid;
+    background-color: var(--green);
   }
 `;
 

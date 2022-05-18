@@ -2,8 +2,7 @@ import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CATEGORIES } from "../constants/categories";
 import { SpotContext } from "../context/spot.context";
-import { Spot, SpotsGroup } from "../ui/Spot";
-import goButton from "/go.png";
+import { Spot, SpotsGroup, SpotsWrapper, StyledLink } from "../ui/Spot";
 
 const SpotsByCategory = () => {
   const { getSpots, spots } = useContext(SpotContext);
@@ -26,10 +25,10 @@ const SpotsByCategory = () => {
     "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg";
 
   return (
-    <div>
-      <Link to={"/categories"}>
-        <p>back</p>
-      </Link>
+    <SpotsWrapper>
+      <div>
+        <StyledLink to={"/categories"}>back</StyledLink>
+      </div>
       <h2>{nameOfCategory}</h2>
       <p>{description}</p>
       <SpotsGroup>
@@ -42,13 +41,11 @@ const SpotsByCategory = () => {
               <img src={spot.image} alt={spot.name} />
             )}
 
-            <Link to={`/spot/${spot._id}`}>
-              <img className="go" src={goButton} alt="go" />
-            </Link>
+            <StyledLink to={`/spot/${spot._id}`}>Go!</StyledLink>
           </Spot>
         ))}
       </SpotsGroup>
-    </div>
+    </SpotsWrapper>
   );
 };
 
