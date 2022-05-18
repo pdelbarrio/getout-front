@@ -13,7 +13,7 @@ const Navbar = () => {
   return authenticated ? (
     <NavbarWrapper>
       <Link to="/categories">
-        <Image size="m" src="/logotextsmall.png" alt="logo getout" />
+        <img src="/logotextsmall.png" alt="logo getout" />
       </Link>
 
       <Burger />

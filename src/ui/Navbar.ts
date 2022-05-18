@@ -1,13 +1,56 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 import { tabletDown } from "./breakpoints";
 
 export const NavbarWrapper = styled.header`
   background-color: var(--white);
   width: 100%;
-  padding: var(--padding-m) var(--padding-s);
+  padding: var(--padding-s);
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  img {
+    width: 200px;
+  }
+
+  ${tabletDown} {
+    img {
+      width: 100px;
+    }
+  }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: var(--dark);
+  padding: var(--padding-xs);
+  border: 2px solid;
+  border-radius: 10px;
+  max-width: 100px;
+
+  &:hover {
+    background-color: var(--yellow);
+  }
+  &:focus {
+    background-color: var(--error);
+  }
+`;
+
+export const ButtonLogout = styled.button`
+  text-decoration: none;
+  color: var(--dark);
+  padding: var(--padding-xs);
+  border: 2px solid;
+  border-radius: 10px;
+  max-width: 100px;
+
+  &:hover {
+    background-color: var(--yellow);
+  }
+  &:focus {
+    background-color: var(--error);
+  }
 `;
 
 export const Ul = styled.ul<{ open: boolean }>`
@@ -19,6 +62,14 @@ export const Ul = styled.ul<{ open: boolean }>`
     padding: 18px 10px;
   }
 
+  /* a.nav_link {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a.nav_link:hover {
+    cursor: pointer;
+  } */
+
   ${tabletDown} {
     flex-flow: column nowrap;
     background-color: var(--violet);
@@ -29,13 +80,8 @@ export const Ul = styled.ul<{ open: boolean }>`
     height: 100vh;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
-    width: ${({ open }) => (open ? "300px" : "0")};
-
+    width: ${({ open }) => (open ? "250px" : "0")};
     padding-left: 0;
-
-    li {
-      color: #fff;
-    }
   }
 `;
 

@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
-import { Ul } from "../../ui/Navbar";
+import { ButtonLogout, StyledNavLink, Ul } from "../../ui/Navbar";
 
 //TODO: TRY NAVLINK FROM REACT-ROUTER-DOM INSTEAD OF <Link /> (OR CREATE LINK WITH STYLED COMPONENT)
 
@@ -16,21 +16,27 @@ const RightNav = ({ open }: Props) => {
   return (
     <Ul open={open}>
       <li>
-        <Link to="/about-us">About Us</Link>
+        <StyledNavLink className="nav_link" to="/about-us">
+          About Us
+        </StyledNavLink>
       </li>
       <li>
-        <Link to="/profile">My Profile</Link>
+        <StyledNavLink className="nav_link" to="/profile">
+          My Profile
+        </StyledNavLink>
       </li>
       <li>
-        <Link to="/categories">Categories</Link>
+        <StyledNavLink className="nav_link" to="/categories">
+          Categories
+        </StyledNavLink>
       </li>
       <li>
-        <Link to="/new-spot">New Spot</Link>
+        <StyledNavLink className="nav_link" to="/new-spot">
+          New Spot
+        </StyledNavLink>
       </li>
       <li>
-        <Button onClick={logout} variant="white">
-          Logout
-        </Button>
+        <ButtonLogout onClick={logout}>Logout</ButtonLogout>
       </li>
     </Ul>
   );
