@@ -5,3 +5,5 @@ export const DESKTOP = 996;
 export const mobileUp = `@media (min-width: ${MOBILE}px)`;
 export const tabletUp = `@media (min-width: ${TABLET}px)`;
 export const desktopUp = `@media (min-width: ${DESKTOP}px)`;
+
+export const tabletDown = `@media (max-width: ${TABLET}px)`;

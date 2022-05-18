@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { tabletDown } from "./breakpoints";
 
 export const NavbarWrapper = styled.header`
   background-color: var(--white);
@@ -18,7 +19,7 @@ export const Ul = styled.ul<{ open: boolean }>`
     padding: 18px 10px;
   }
 
-  @media (max-width: 768px) {
+  ${tabletDown} {
     flex-flow: column nowrap;
     background-color: var(--violet);
     position: fixed;
@@ -26,9 +27,11 @@ export const Ul = styled.ul<{ open: boolean }>`
     top: 0;
     right: 0;
     height: 100vh;
-    width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
+    width: ${({ open }) => (open ? "300px" : "0")};
+
+    padding-left: 0;
 
     li {
       color: #fff;
@@ -45,7 +48,7 @@ export const StyledBurger = styled.div<{ open: boolean }>`
   z-index: 20;
   display: none;
 
-  @media (max-width: 768px) {
+  ${tabletDown} {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
