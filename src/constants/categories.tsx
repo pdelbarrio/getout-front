@@ -7,6 +7,7 @@ export const CATEGORIES: Category[] = [
     slug: "live-music",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652811249/getout/categories/livemusic_lxvc85.jpg",
+    color: "#c92d2e",
     description:
       "Concert venues, small places, squatters with good vibes and good sound and so on",
   },
@@ -16,6 +17,7 @@ export const CATEGORIES: Category[] = [
     slug: "food",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#f6bd41",
     description:
       "This is not for fans of El Bulli. Better some cheap patatas bravas and generous sandwiches than to spend a lot of money and go hungry.",
   },
@@ -25,6 +27,8 @@ export const CATEGORIES: Category[] = [
     slug: "shops",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+
+    color: "#538ff7",
     description: "Capitalism sucks but there are stores that sell cool stuff.",
   },
   {
@@ -33,6 +37,7 @@ export const CATEGORIES: Category[] = [
     slug: "stand-up",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#65b867",
     description: "Stand up has become trendy, but we need to laugh!",
   },
   {
@@ -41,6 +46,8 @@ export const CATEGORIES: Category[] = [
     slug: "cinema",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+
+    color: "#837fba",
     description: "No blockbusters please",
   },
   {
@@ -49,6 +56,7 @@ export const CATEGORIES: Category[] = [
     slug: "views",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#d1903b",
     description: "The name says it all, views",
   },
   {
@@ -57,6 +65,7 @@ export const CATEGORIES: Category[] = [
     slug: "silence",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#7d7263",
     description:
       "It is difficult to find silence in the city, but let's find out",
   },
@@ -66,6 +75,7 @@ export const CATEGORIES: Category[] = [
     slug: "weird",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#e524ae",
     description: "Whatever",
   },
   {
@@ -74,6 +84,7 @@ export const CATEGORIES: Category[] = [
     slug: "art",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#c92d2e",
     description: "Art galleries and the like",
   },
   {
@@ -82,14 +93,27 @@ export const CATEGORIES: Category[] = [
     slug: "architecture",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#f6bd41",
     description: "E difisi",
   },
   {
     id: 11,
-    name: "Random",
-    slug: "random",
+    name: "Theater",
+    slug: "theater",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+    color: "#538ff7",
+    description: "Not places",
+  },
+
+  {
+    id: 12,
+    name: "Entities",
+    slug: "entities",
+    image:
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+
+    color: "#65b867",
     description: "Not places",
   },
 ];

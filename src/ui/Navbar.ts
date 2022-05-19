@@ -74,7 +74,7 @@ export const Ul = styled.ul<{ open: boolean }>`
 
   ${tabletDown} {
     flex-flow: column nowrap;
-    background-color: var(--lightgrey);
+    background-color: var(--white);
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
@@ -84,6 +84,8 @@ export const Ul = styled.ul<{ open: boolean }>`
     transition: transform 0.3s ease-in-out;
     width: ${({ open }) => (open ? "250px" : "0")};
     padding-left: 0;
+    border: solid 2px;
+    z-index: 15;
   }
 `;
 
