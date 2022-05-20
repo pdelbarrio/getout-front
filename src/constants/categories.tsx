@@ -98,22 +98,23 @@ export const CATEGORIES: Category[] = [
   },
   {
     id: 11,
-    name: "Theater",
-    slug: "theater",
-    image:
-      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
-    color: "#538ff7",
-    description: "Not places",
-  },
-
-  {
-    id: 12,
-    name: "Entities",
-    slug: "entities",
+    name: "Not spots",
+    slug: "not-spots",
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
 
     color: "#65b867",
-    description: "Not places",
+    description:
+      "Entities with no fixed place or physical location but that organize interesting parties or do cool stuff.",
+  },
+  {
+    id: 12,
+    name: "Random",
+    slug: "random",
+    image:
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+
+    color: "#65b867",
+    description: "What does not fit in the other categories.",
   },
 ];
