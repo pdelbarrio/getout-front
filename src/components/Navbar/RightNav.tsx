@@ -16,24 +16,16 @@ const RightNav = ({ open }: Props) => {
   return (
     <Ul open={open}>
       <li>
-        <StyledNavLink className="nav_link" to="/about-us">
-          About Us
-        </StyledNavLink>
+        <StyledNavLink to="/about-us">About Us</StyledNavLink>
       </li>
       <li>
-        <StyledNavLink className="nav_link" to="/profile">
-          My Profile
-        </StyledNavLink>
+        <StyledNavLink to="/profile">My Profile</StyledNavLink>
       </li>
       <li>
-        <StyledNavLink className="nav_link" to="/categories">
-          Categories
-        </StyledNavLink>
+        <StyledNavLink to="/categories">Categories</StyledNavLink>
       </li>
       <li>
-        <StyledNavLink className="nav_link" to="/new-spot">
-          New Spot
-        </StyledNavLink>
+        <StyledNavLink to="/new-spot">New Spot</StyledNavLink>
       </li>
       <li>
         <ButtonLogout onClick={logout}>Logout</ButtonLogout>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { CATEGORIES } from "../constants/categories";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
@@ -28,13 +28,13 @@ const SpotForm = ({ onSubmit }: Props) => {
     handleSubmit,
     register,
     setValue,
+    control,
     formState: { errors },
   } = useForm({
     defaultValues: {
       name: "",
       description: "",
-      image:
-        "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
+      image: "",
       website: "",
       category: "",
       location: "",
@@ -61,6 +61,21 @@ const SpotForm = ({ onSubmit }: Props) => {
           <input type="hidden" {...register("image")} />
         </Label>
       )}
+      {/* <Label>
+        <Controller
+          control={control}
+          name="image"
+          render={({ field }) => {
+            // sending integer instead of string.
+            return (
+              <input
+                {...field}
+                onChange={(e) => field.onChange(parseInt(e.target.value))}
+              />
+            );
+          }}
+        />
+      </Label> */}
       <Label>
         <Input
           hasError={!!errors.name}
@@ -124,7 +139,7 @@ const SpotForm = ({ onSubmit }: Props) => {
         {errors.location ? <Error>{errors.location.message}</Error> : null}
       </Label>
       <Button variant="white" type="submit">
-        Submit spot
+        Preview spot
       </Button>
     </Form>
   );

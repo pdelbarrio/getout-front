@@ -35,7 +35,12 @@ const SpotById = () => {
             <img src={spot.image} alt={spot.name} />
           )}
           <h4>
-            added by <span>@{spot.uploader.username}</span>
+            added by{" "}
+            {spot.uploader == null ? (
+              <span>Unknown user</span>
+            ) : (
+              <span>@{spot.uploader.username}</span>
+            )}
           </h4>
           <p>{spot.description}</p>
           <h4>url</h4>

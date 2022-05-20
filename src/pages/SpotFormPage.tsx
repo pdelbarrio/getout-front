@@ -11,7 +11,8 @@ const SpotFormPage = () => {
 
   const submitNewSpot = async (values: SpotParams) => {
     createSpot(values).then((status: boolean) => {
-      console.log(status);
+      console.log("values", values);
+      console.log("status", status);
       if (status) {
         setSuccessToast(
           "Your spot is pending moderation, it will appear soon, THANKS!"

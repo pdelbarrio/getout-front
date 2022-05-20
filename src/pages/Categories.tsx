@@ -3,8 +3,8 @@ import { CATEGORIES } from "../constants/categories";
 import { CategoriesWrapper, CategoryLink, Content } from "../ui/Categories";
 
 export type Props = {
-  img: string;
-  color: string;
+  img?: string;
+  color?: string;
 };
 
 const Categories = ({ img, color }: Props) => {

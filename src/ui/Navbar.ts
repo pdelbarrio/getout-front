@@ -37,6 +37,19 @@ export const StyledNavLink = styled(NavLink)`
   &:focus {
     background-color: var(--error);
   }
+
+  ${tabletDown} {
+    text-decoration: none;
+    color: var(--dark);
+    display: block;
+
+    &:hover {
+      background-color: var(--yellow);
+    }
+    &:focus {
+      background-color: var(--error);
+    }
+  }
 `;
 
 export const ButtonLogout = styled.button`
@@ -53,6 +66,17 @@ export const ButtonLogout = styled.button`
   &:focus {
     background-color: var(--error);
   }
+  ${tabletDown} {
+    width: 100%;
+    display: "inline-block";
+
+    &:hover {
+      background-color: var(--yellow);
+    }
+    &:focus {
+      background-color: var(--error);
+    }
+  }
 `;
 
 export const Ul = styled.ul<{ open: boolean }>`
@@ -63,14 +87,6 @@ export const Ul = styled.ul<{ open: boolean }>`
   li {
     padding: 18px 10px;
   }
-
-  /* a.nav_link {
-    text-decoration: none;
-    cursor: pointer;
-  }
-  a.nav_link:hover {
-    cursor: pointer;
-  } */
 
   ${tabletDown} {
     flex-flow: column nowrap;
@@ -86,6 +102,11 @@ export const Ul = styled.ul<{ open: boolean }>`
     padding-left: 0;
     border: solid 2px;
     z-index: 15;
+
+    li {
+      border: 2px solid;
+      width: 250px;
+    }
   }
 `;
 
