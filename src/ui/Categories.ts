@@ -20,6 +20,13 @@ export const Content = styled.div<{ img: string; color: string }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  .description {
+    display: block;
+    &:hover {
+      display: none;
+    }
+  }
 `;
 
 export const CategoryLink = styled(Link)`
@@ -32,9 +39,9 @@ export const CategoryLink = styled(Link)`
   mix-blend-mode: hard-light;
 
   &:hover {
-    mix-blend-mode: color-burn;
+    mix-blend-mode: difference;
   }
   &:focus {
-    mix-blend-mode: color-dodge;
+    mix-blend-mode: color-burn;
   }
 `;
