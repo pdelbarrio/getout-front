@@ -3,7 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { CATEGORIES } from "../constants/categories";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
-import { Form, Label } from "../ui/form/Form";
+import { Form, ImageFormContainer, InputImage, Label } from "../ui/form/Form";
 import { Input, Select, TextArea } from "../ui/form/Input";
 import { requiredValidation } from "../utils/forms";
 import axios from "axios";
@@ -80,21 +80,47 @@ const SpotForm = ({ onSubmit }: Props) => {
   // We create onSubmit as props to make the father component (where <LoginForm/> is ) control the submit
   return (
     <>
-      <div className="App">
+      <ImageFormContainer>
         <div className="container">
-          <div className="inputs">
-            <input type="file" onChange={onChange} />
-            <button onClick={() => onSubmitFile(selectedFile)}>Upload</button>
-          </div>
+          {uploadedImage ? null : (
+            <div className="inputs">
+              {displayFile ? (
+                <p>
+                  This will be the image of your spot,{" "}
+                  <span className="sure">if you are sure click upload</span>
+                </p>
+              ) : (
+                <p>
+                  Select an image for your spot
+                  <span className="span">
+                    (it is recommended that it be horizontal for visualization
+                    reasons.)
+                  </span>
+                </p>
+              )}
+              {uploadedImage ? null : (
+                <InputImage type="file" onChange={onChange} />
+              )}
+              {uploadedImage ? null : (
+                <Button
+                  className="buttonform"
+                  variant="white"
+                  onClick={() => onSubmitFile(selectedFile)}
+                >
+                  Upload
+                </Button>
+              )}
+            </div>
+          )}
           {displayFile ? (
             <img className="preview" alt="preview" src={displayFile} />
           ) : null}
         </div>
 
         {uploadedImage && (
-          <img alt="preview" className="preview" src={uploadedImage} />
+          <img alt="preview" className="uploaded" src={uploadedImage} />
         )}
-      </div>
+      </ImageFormContainer>
       <Form method="post" onSubmit={handleSubmit(onSubmit)}>
         <Label>
           <Input
@@ -159,7 +185,7 @@ const SpotForm = ({ onSubmit }: Props) => {
           {errors.location ? <Error>{errors.location.message}</Error> : null}
         </Label>
         <Button variant="white" type="submit">
-          Preview spot
+          Submit spot
         </Button>
       </Form>
     </>
