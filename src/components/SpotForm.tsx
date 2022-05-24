@@ -35,7 +35,8 @@ const SpotForm = ({ onSubmit }: Props) => {
     defaultValues: {
       name: "",
       description: "",
-      image: "",
+      image:
+        "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
       website: "",
       category: "",
       location: "",
@@ -121,6 +122,7 @@ const SpotForm = ({ onSubmit }: Props) => {
           <img alt="preview" className="uploaded" src={uploadedImage} />
         )}
       </ImageFormContainer>
+
       <Form method="post" onSubmit={handleSubmit(onSubmit)}>
         <Label>
           <Input

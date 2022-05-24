@@ -19,7 +19,6 @@ const SpotsByCategory = () => {
   }, []);
 
   const result = spots.filter(({ category: v }) => v == type);
-  console.log(result);
   const description = CATEGORIES.filter((item) => item.slug == type).map(
     (item) => item.description
   );
@@ -28,10 +27,8 @@ const SpotsByCategory = () => {
     (item) => item.name
   );
 
-  // TODO: FIXME: How to show only the validated spots
-  const validatedSpots = result.forEach((element) => {
-    element.validated;
-  });
+  const defaultImage =
+    "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg";
 
   return (
     <SpotsWrapper>
@@ -43,8 +40,11 @@ const SpotsByCategory = () => {
         {result.map((spot) => (
           <Spot key={spot._id}>
             <h4>{spot.name}</h4>
-
-            <img src={spot.image} alt={spot.name} />
+            {spot.image == "" ? (
+              <img src={defaultImage} alt={spot.name} />
+            ) : (
+              <img src={spot.image} alt={spot.name} />
+            )}
 
             <div className="button">
               <div></div>
