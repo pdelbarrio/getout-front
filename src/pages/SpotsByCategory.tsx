@@ -19,7 +19,7 @@ const SpotsByCategory = () => {
   }, []);
 
   const result = spots.filter(({ category: v }) => v == type);
-  console.log(result);
+
   const description = CATEGORIES.filter((item) => item.slug == type).map(
     (item) => item.description
   );
@@ -27,11 +27,6 @@ const SpotsByCategory = () => {
   const nameOfCategory = CATEGORIES.filter((item) => item.slug == type).map(
     (item) => item.name
   );
-
-  // TODO: FIXME: How to show only the validated spots
-  const validatedSpots = result.forEach((element) => {
-    element.validated;
-  });
 
   return (
     <SpotsWrapper>
