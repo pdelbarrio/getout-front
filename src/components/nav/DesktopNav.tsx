@@ -1,0 +1,22 @@
+import { Link } from "react-router-dom";
+import { useMenuContext } from "../../state";
+import Hamburger from "hamburger-react";
+import NavLinks from "./NavLinks";
+import { useScroll } from "../../hooks";
+import { DesktopNav } from "../../ui/nav/DesktopNav";
+
+const DesktopNavbar = () => {
+  const { isMenuOpen, toggleMenu } = useMenuContext();
+  const { isScrolled } = useScroll();
+  return (
+    <DesktopNav isScrolled={isScrolled}>
+      <Link to="/" className="logo">
+        Logo
+      </Link>
+      <NavLinks />
+      <Hamburger toggled={isMenuOpen} toggle={toggleMenu} duration={0} />
+    </DesktopNav>
+  );
+};
+
+export default DesktopNavbar;

@@ -7,7 +7,7 @@ import { NavbarWrapper } from "../../ui/Navbar";
 import Image from "../Image";
 import Burger from "./Burguer";
 
-const Navbar = () => {
+const Navbar_old = () => {
   const { authenticated } = useContext(AuthContext);
 
   return authenticated ? (
@@ -21,4 +21,4 @@ const Navbar = () => {
   ) : null;
 };
 
-export default Navbar;
+export default Navbar_old;

@@ -12,7 +12,9 @@ import StyleGuide from "./pages/StyleGuide";
 import Layout from "./ui/Layout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
+import { MenuProvider } from "./state";
+import Navbar from "./components/nav/index";
 
 function App() {
   return (
@@ -21,7 +23,10 @@ function App() {
         <AuthContextProvider>
           <SpotContextProvider>
             <BrowserRouter>
-              <Navbar />
+              {/* <Navbar /> */}
+              <MenuProvider>
+                <Navbar />
+              </MenuProvider>
               <Routes>
                 <Route index element={<Authenticate />} />
                 <Route path="edit">
