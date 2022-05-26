@@ -10,8 +10,8 @@ const DesktopNavbar = () => {
   const { isScrolled } = useScroll();
   return (
     <DesktopNav isScrolled={isScrolled}>
-      <Link to="/" className="logo">
-        Logo
+      <Link to="/categories">
+        <img className="logo" src="/logotextsmall.png" alt="logo getout" />
       </Link>
       <NavLinks />
       <Hamburger toggled={isMenuOpen} toggle={toggleMenu} duration={0} />

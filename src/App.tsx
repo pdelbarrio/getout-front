@@ -9,101 +9,98 @@ import SpotById from "./pages/SpotById";
 import SpotFormPage from "./pages/SpotFormPage";
 import SpotsByCategory from "./pages/SpotsByCategory";
 import StyleGuide from "./pages/StyleGuide";
-import Layout from "./ui/Layout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import Navbar from "./components/Navbar/Navbar";
 import { MenuProvider } from "./state";
 import Navbar from "./components/nav/index";
+import { GlobalStyle } from "./ui/GlobalStyle";
 
 function App() {
   return (
     <>
-      <Layout>
-        <AuthContextProvider>
-          <SpotContextProvider>
-            <BrowserRouter>
-              {/* <Navbar /> */}
-              <MenuProvider>
-                <Navbar />
-              </MenuProvider>
-              <Routes>
-                <Route index element={<Authenticate />} />
-                <Route path="edit">
-                  <Route
-                    path="profile"
-                    element={
-                      <ProtectedRoute>
-                        <h1>Edit Profile</h1>
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="spot"
-                    element={
-                      <ProtectedRoute>
-                        <h1>edit spot</h1>
-                      </ProtectedRoute>
-                    }
-                  />
-                </Route>
+      <AuthContextProvider>
+        <SpotContextProvider>
+          <GlobalStyle />
+          <BrowserRouter>
+            <MenuProvider>
+              <Navbar />
+            </MenuProvider>
+            <Routes>
+              <Route index element={<Authenticate />} />
+              <Route path="edit">
                 <Route
                   path="profile"
                   element={
                     <ProtectedRoute>
-                      <h1>MY PROFILE</h1>
+                      <h1>Edit Profile</h1>
                     </ProtectedRoute>
                   }
                 />
                 <Route
-                  path="about-us"
+                  path="spot"
                   element={
                     <ProtectedRoute>
-                      <h1>ABOUT US</h1>
+                      <h1>edit spot</h1>
                     </ProtectedRoute>
                   }
                 />
+              </Route>
+              <Route
+                path="profile"
+                element={
+                  <ProtectedRoute>
+                    <h1>MY PROFILE</h1>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="about-us"
+                element={
+                  <ProtectedRoute>
+                    <h1>ABOUT US</h1>
+                  </ProtectedRoute>
+                }
+              />
 
-                <Route
-                  path="new-spot"
-                  element={
-                    <ProtectedRoute>
-                      <SpotFormPage />
-                    </ProtectedRoute>
-                  }
-                />
+              <Route
+                path="new-spot"
+                element={
+                  <ProtectedRoute>
+                    <SpotFormPage />
+                  </ProtectedRoute>
+                }
+              />
 
-                <Route
-                  path="categories"
-                  element={
-                    <ProtectedRoute>
-                      <Categories />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="spots/:type"
-                  element={
-                    <ProtectedRoute>
-                      <SpotsByCategory />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="spot/:id"
-                  element={
-                    <ProtectedRoute>
-                      <SpotById />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route path="styleguide" element={<StyleGuide />} />
-                <Route path="*" element={<ErrorForm />} />
-              </Routes>
-            </BrowserRouter>
-          </SpotContextProvider>
-        </AuthContextProvider>
-      </Layout>
+              <Route
+                path="categories"
+                element={
+                  <ProtectedRoute>
+                    <Categories />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="spots/:type"
+                element={
+                  <ProtectedRoute>
+                    <SpotsByCategory />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="spot/:id"
+                element={
+                  <ProtectedRoute>
+                    <SpotById />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="styleguide" element={<StyleGuide />} />
+              <Route path="*" element={<ErrorForm />} />
+            </Routes>
+          </BrowserRouter>
+        </SpotContextProvider>
+      </AuthContextProvider>
 
       <ToastContainer theme="colored" />
     </>

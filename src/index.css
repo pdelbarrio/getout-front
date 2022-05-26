@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-html,
+/* html,
 body,
 div,
 span,
@@ -79,15 +79,15 @@ ul {
 
 * {
   box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
   margin: 0;
   background-color: var(--white);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 :root {
   --green: #65b867;
@@ -100,16 +100,25 @@ body {
   --lightgrey: #cabfbf;
   --blue: #538ff7;
   --violet: #837fba;
-
   --padding-xs: 0.5rem;
   --padding-s: 1rem;
   --padding-m: 2rem;
-
   --border-radius: 50px;
-
   --input-width: 400px;
+
+  --text: #fff;
+  --bg: #232323;
+  --headerBg: #1c1c1c;
+  --headerBoxShadow: rgba(0, 0, 0, 0.8) 0 1px 4px;
 }
 
+body.light {
+  --text: #000;
+  --bg: #f6f7f8;
+  --headerBg: #fff;
+  --headerBoxShadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+}
+/* 
 p,
 span {
   color: var(--dark);
@@ -145,4 +154,4 @@ select {
 
 textarea {
   font-family: "Roboto", sans-serif;
-}
+} */

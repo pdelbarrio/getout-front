@@ -15,6 +15,10 @@ export const DesktopNav = styled.nav<{ isScrolled: boolean }>`
   color: var(--text);
   transition: all 150ms linear;
 
+  .logo {
+    width: 30vw;
+  }
+
   ${(props) =>
     props.isScrolled &&
     css`

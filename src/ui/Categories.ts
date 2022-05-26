@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Category = styled.div``;
@@ -36,7 +36,7 @@ export const CategoryLink = styled(Link)`
   font-size: 30px;
   color: white;
   padding: var(--padding-m);
-  mix-blend-mode: hard-light;
+  /* mix-blend-mode: hard-light; */
 
   &:hover {
     mix-blend-mode: difference;
