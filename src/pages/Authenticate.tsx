@@ -49,9 +49,9 @@ const Authenticate = () => {
 
   return (
     <LoginLayout className="video">
-      {/* <video autoPlay loop muted>
+      <video autoPlay loop muted>
         <source src={bgVideo} type="video/mp4" />
-      </video> */}
+      </video>
       <Image src="/getoutlogo.png" alt="logo-getout" />
 
       <FormWrapper>

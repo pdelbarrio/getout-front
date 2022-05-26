@@ -43,6 +43,7 @@ export const DesktopNav = styled.nav<{ isScrolled: boolean }>`
     flex: 2;
     color: var(--text);
     font-size: 32px;
+    max-width: 120px;
   }
 
   .nav-links {

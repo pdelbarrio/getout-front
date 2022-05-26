@@ -11,7 +11,7 @@ const DesktopNavbar = () => {
   return (
     <DesktopNav isScrolled={isScrolled}>
       <Link to="/categories">
-        <img className="logo" src="/logotextsmall.png" alt="logo getout" />
+        <img className="logo" src="/textlogosmall.png" alt="logo getout" />
       </Link>
       <NavLinks />
       <Hamburger toggled={isMenuOpen} toggle={toggleMenu} duration={0} />

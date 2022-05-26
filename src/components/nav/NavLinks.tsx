@@ -5,6 +5,7 @@ import { NavLink, NavLinksWrapper } from "../../ui/nav/NavLinks";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
+// FIXME: Make and object with slug and name to map by link and show the string
 export const links = ["new-spot", "categories"];
 
 const DesktopNavLinks = () => {
