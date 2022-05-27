@@ -7,7 +7,6 @@ export const LoginLayout = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 25px;
-  /* background-color: var(--violet); */
 `;
 
 export const FormWrapper = styled.div`

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { LoginParams, RegisterParams } from "../api/auth.api";
 import Image from "../components/Image";
 import LoginForm from "../components/LoginForm";
@@ -18,7 +18,8 @@ import { setErrorToast } from "../utils/toasts";
 const Authenticate = () => {
   const [userEmail, setUserEmail] = useState("");
   const [formVariant, setFormVariant] = useState<"register" | "login">("login");
-
+  const [videoswitch, setVideo] = useState(true);
+  const videoRef = useRef(null);
   const { login, register, authenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -36,6 +37,16 @@ const Authenticate = () => {
     }
   };
 
+  const handleVideo = () => {
+    if (videoRef.current.paused) {
+      setVideo(true);
+      videoRef.current.play();
+    } else {
+      setVideo(false);
+      videoRef.current.pause();
+    }
+  };
+
   const handleRegister = async (values: RegisterParams) => {
     const errorPayload = await register(values);
 
@@ -49,9 +60,12 @@ const Authenticate = () => {
 
   return (
     <LoginLayout className="video">
-      <video autoPlay loop muted>
+      <video ref={videoRef} autoPlay loop muted>
         <source src={bgVideo} type="video/mp4" />
       </video>
+      {/* <button>{videoswitch ? "Turn off video" : "Turn on video"}</button> */}
+      <button onClick={handleVideo}>{videoswitch ? "pause" : "play"}</button>
+
       <Image src="/getoutlogo.png" alt="logo-getout" />
 
       <FormWrapper>
