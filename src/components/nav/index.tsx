@@ -17,6 +17,7 @@ const Navbar = () => {
 export default Navbar;
 
 const Nav = styled.div`
+  padding-top: 65px;
   display: flex;
   flex-flow: column nowrap;
 `;
