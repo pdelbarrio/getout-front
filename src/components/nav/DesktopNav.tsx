@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useMenuContext } from "../../state";
+// import { useMenuContext } from "../../state";
+import { useMenuContext } from "../../context";
 import Hamburger from "hamburger-react";
 import NavLinks from "./NavLinks";
 import { useScroll } from "../../hooks";

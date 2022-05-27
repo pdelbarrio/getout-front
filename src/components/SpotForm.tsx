@@ -94,8 +94,7 @@ const SpotForm = ({ onSubmit }: Props) => {
                 <p>
                   Select an image for your spot
                   <span className="span">
-                    (it is recommended that it be horizontal for visualization
-                    reasons.)
+                    (recommended horizontal image for display reasons)
                   </span>
                 </p>
               )}
