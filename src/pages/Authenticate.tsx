@@ -15,14 +15,19 @@ import "./video.css";
 import bgVideo from "../video/bgvideo.mp4";
 import { useNavigate } from "react-router-dom";
 import { setErrorToast } from "../utils/toasts";
-import { ButtonContainer, ButtonModal, Container } from "../ui/Modal";
+import {
+  ButtonContainer,
+  ButtonInfoModal,
+  ButtonModal,
+  Container,
+} from "../ui/Modal";
 import Modal from "../components/Modal";
 
 const Authenticate = () => {
   const [userEmail, setUserEmail] = useState("");
   const [formVariant, setFormVariant] = useState<"register" | "login">("login");
   const [videoswitch, setVideo] = useState(true);
-  const [stateModal, setStateModal] = useState(false);
+  const [stateModal, setStateModal] = useState(true);
   const videoRef = useRef(null);
   const { login, register, authenticated } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -98,7 +103,7 @@ const Authenticate = () => {
       </FormWrapper>
 
       <ButtonContainer>
-        <ButtonModal>
+        <ButtonInfoModal onClick={() => setStateModal(!stateModal)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -109,7 +114,7 @@ const Authenticate = () => {
           >
             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
           </svg>
-        </ButtonModal>
+        </ButtonInfoModal>
       </ButtonContainer>
 
       <Modal stateModal={stateModal} setStateModal={setStateModal}>
