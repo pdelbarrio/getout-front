@@ -4,7 +4,7 @@ export type ImageSizes = "xs" | "s" | "m";
 
 const imageWidthBySize = {
   xs: "width: 50px",
-  s: "width: 120px",
+  s: "width: 150px",
   m: "width: 240px",
 };
 

@@ -35,4 +35,10 @@ export const ButtonVideo = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+
+  svg {
+    width: 150%;
+    height: 150%;
+    color: white;
+  }
 `;
