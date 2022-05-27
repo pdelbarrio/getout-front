@@ -27,7 +27,7 @@ const Authenticate = () => {
   const [userEmail, setUserEmail] = useState("");
   const [formVariant, setFormVariant] = useState<"register" | "login">("login");
   const [videoswitch, setVideo] = useState(true);
-  const [stateModal, setStateModal] = useState(true);
+  const [stateModal, setStateModal] = useState(false);
   const videoRef = useRef(null);
   const { login, register, authenticated } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -121,12 +121,13 @@ const Authenticate = () => {
         <Container>
           Welcome! GET OUT is a collaborative database of cool spots in
           Barcelona that don't appear in the typical guidebooks. It is divided
-          into different categories so you can search. Feel free to create a
-          user profile to add spots to your favorites and even to add spots to
-          the database that you think may be interesting for other users. But
-          above all GET OUT!
+          into different categories so you can search. Feel free to register
+          yourself to add spots to the database that you think may be
+          interesting for other users. You can also browse through the different
+          categories without having to create a user account.{" "}
+          <span>GET OUT!</span>
           <ButtonModal onClick={() => setStateModal(!stateModal)}>
-            Accept
+            I GET IT!
           </ButtonModal>
         </Container>
       </Modal>

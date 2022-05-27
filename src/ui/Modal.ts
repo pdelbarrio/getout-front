@@ -9,16 +9,19 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ButtonModal = styled.button`
-  width: 50px;
-  height: 50px;
-  border: none;
-  background: none;
-  top: 15px;
-  right: 15px;
+  color: var(--dark);
+  padding: 10px;
+  padding-bottom: 20px;
+  border: 2px solid;
+  border-radius: 10px;
+  width: 100px;
+  height: 20px;
+  font-weight: bold;
+  background: var(--yellow);
+  margin-top: 20px;
+
   cursor: pointer;
   transition: 0.3s ease all;
-  border-radius: 5px;
-  color: var(--dark);
 
   &:hover {
     background: #f2f2f2;
@@ -88,9 +91,9 @@ export const Overlay = styled.div`
 export const ModalContainer = styled.div`
   width: 500px;
   min-height: 100px;
-  background: #fff;
+  background: #f3e281;
   position: relative;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 20px;
 `;
