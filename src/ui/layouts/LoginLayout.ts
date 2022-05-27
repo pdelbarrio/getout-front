@@ -28,3 +28,11 @@ export const ErrorWrapper = styled.div`
   text-align: center;
   margin-bottom: 1rem;
 `;
+
+export const ButtonVideo = styled.button`
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+`;
