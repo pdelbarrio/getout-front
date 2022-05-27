@@ -20,26 +20,40 @@ export const Content = styled.div<{ img: string; color: string }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: stretch;
+`;
 
-  .description {
-    display: block;
-    &:hover {
-      display: none;
-    }
+export const ContainerDescription = styled.div`
+  color: var(--dark) !important;
+  cursor: pointer;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+  /* visibility: hidden; */
+
+  &:hover {
+    /* visibility: visible; */
+    color: var(--dark) !important;
+    cursor: pointer;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
   }
 `;
 
 export const CategoryLink = styled(Link)`
   text-decoration: none;
-  background-color: var(--grey);
+  background-color: transparent;
   font-weight: bolder;
   font-size: 30px;
-  color: white;
+  color: var(--dark);
   padding: var(--padding-m);
-  /* mix-blend-mode: hard-light; */
 
   &:hover {
     mix-blend-mode: difference;
+    background-color: #c8b6b6;
   }
   &:focus {
     mix-blend-mode: color-burn;

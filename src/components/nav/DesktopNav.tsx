@@ -9,6 +9,7 @@ import { DesktopNav } from "../../ui/nav/DesktopNav";
 const DesktopNavbar = () => {
   const { isMenuOpen, toggleMenu } = useMenuContext();
   const { isScrolled } = useScroll();
+
   return (
     <DesktopNav isScrolled={isScrolled}>
       <Link to="/categories">

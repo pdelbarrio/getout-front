@@ -11,7 +11,7 @@ import SpotsByCategory from "./pages/SpotsByCategory";
 import StyleGuide from "./pages/StyleGuide";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { MenuProvider } from "./state";
+import { MenuProvider } from "./context";
 import Navbar from "./components/nav/index";
 import { GlobalStyle } from "./ui/GlobalStyle";
 

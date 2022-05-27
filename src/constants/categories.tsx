@@ -90,12 +90,12 @@ export const CATEGORIES: Category[] = [
   },
   {
     id: 10,
-    name: "Architecture",
-    slug: "architecture",
+    name: "Bares",
+    slug: "bares",
     image:
-      "https://res.cloudinary.com/getoutbcn/image/upload/v1653670161/getout/categories/arquitectura_ted66g.jpg",
+      "https://res.cloudinary.com/getoutbcn/image/upload/v1653673459/getout/categories/pubs_qgpcjp.jpg",
     color: "#f6bd41",
-    description: "E difisi",
+    description: "Qué lugares",
   },
   {
     id: 11,
@@ -115,7 +115,7 @@ export const CATEGORIES: Category[] = [
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653670830/getout/categories/random_uyrbfx.jpg",
 
-    color: "#65b867",
+    color: "#538ff7",
     description: "What does not fit in the other categories.",
   },
 ];
