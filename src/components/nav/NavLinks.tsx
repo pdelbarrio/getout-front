@@ -1,7 +1,7 @@
 import { useMenuContext } from "../../state";
 import { useTheme } from "../../hooks";
 import Icon from "../Icon";
-import { NavLink, NavLinksWrapper } from "../../ui/nav/NavLinks";
+import { LogoutButton, NavLink, NavLinksWrapper } from "../../ui/nav/NavLinks";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
@@ -23,7 +23,7 @@ const DesktopNavLinks = () => {
         </li>
       ))}
       <li>
-        <button onClick={logout}>Logout</button>
+        <LogoutButton onClick={logout}>Logout</LogoutButton>
       </li>
       <li>
         <button onClick={toggleTheme}>

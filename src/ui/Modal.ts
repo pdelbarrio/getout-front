@@ -104,6 +104,7 @@ export const ModalHeader = styled.div`
   justify-content: space-between;
   margin-bottom: 20px;
   padding-bottom: 20px;
+  color: #1c1c1c !important;
 `;
 
 export const CloseButton = styled.button`
@@ -143,8 +144,12 @@ export const Container = styled.div`
   p {
     font-size: 18px;
     margin-bottom: 20px;
+    color: var(--dark);
   }
-
+  span {
+    font-weight: bold;
+    color: var(--dark);
+  }
   img {
     width: 100%;
     vertical-align: top;

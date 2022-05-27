@@ -32,6 +32,10 @@ export const NavLinksWrapper = styled.ul`
   }
 `;
 
+export const LogoutButton = styled.button`
+  color: var(--text);
+`;
+
 export const NavLink = styled(Link)`
   position: relative;
   color: white;
