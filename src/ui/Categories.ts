@@ -19,41 +19,34 @@ export const Content = styled.div<{ img: string; color: string }>`
   background-blend-mode: screen;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
-  /* align-items: stretch; */
+
+  .buttoncontainer {
+    text-decoration: none;
+    /* background-color: transparent; */
+    font-weight: bold;
+    font-size: 30px;
+    padding: var(--padding-s);
+    border-radius: 20px;
+    width: 350px;
+    margin-left: 30px;
+  }
 `;
 
 export const ContainerDescription = styled.div`
   color: var(--dark) !important;
   cursor: pointer;
   font-weight: bold;
-  padding-left: 20px;
+  padding-left: 50px;
   padding-right: 20px;
   margin: auto;
-
-  &:hover {
-    color: var(--dark) !important;
-    cursor: pointer;
-    font-weight: bold;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: auto;
-  }
 `;
 
 export const CategoryLink = styled(Link)`
-  text-decoration: none;
-  background-color: transparent;
-  font-weight: bolder;
+  /* text-decoration: none; */
+  /* background-color: transparent; */
+  font-weight: bold;
   font-size: 30px;
-  color: var(--dark);
-  padding: var(--padding-m);
-
-  &:hover {
-    /* mix-blend-mode: difference;
-    background-color: #c8b6b6; */
-  }
-  &:focus {
-    mix-blend-mode: color-burn;
-  }
+  padding: var(--padding-s);
+  border-radius: 20px;
+  cursor: pointer;
 `;

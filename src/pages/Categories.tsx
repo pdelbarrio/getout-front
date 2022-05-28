@@ -7,6 +7,7 @@ import {
   CategoryLink,
   ContainerDescription,
   Content,
+  TestDiv,
 } from "../ui/Categories";
 
 export type Props = {
@@ -31,12 +32,11 @@ const Categories = ({ img, color }: Props) => {
               </ContainerDescription>
               <CategoryLink to={`/spots/${type.slug}`}>
                 <motion.button
+                  className="buttoncontainer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 1.1 }}
                 >
-                  <div>
-                    <p>{type.name}</p>
-                  </div>
+                  <p>{type.name}</p>
                 </motion.button>
               </CategoryLink>
             </Content>
