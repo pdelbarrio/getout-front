@@ -151,7 +151,7 @@ const SpotForm = ({ onSubmit }: Props) => {
           <Input
             hasError={!!errors.website}
             placeholder="website"
-            type="text"
+            type="url"
             {...register("website")}
           />
 

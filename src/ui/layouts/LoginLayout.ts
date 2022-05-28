@@ -8,6 +8,11 @@ export const LoginLayout = styled.div`
   align-items: center;
   gap: 25px;
 `;
+export const ButtonVideoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end !important;
+`;
 
 export const FormWrapper = styled.div`
   width: 100%;
@@ -35,6 +40,13 @@ export const ButtonVideo = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+  margin-left: 800px;
+  margin-top: 15px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 300px;
+    margin-top: 15px;
+  }
 
   svg {
     width: 150%;
