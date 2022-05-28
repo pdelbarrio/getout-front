@@ -9,7 +9,7 @@ export const CATEGORIES: Category[] = [
       "https://res.cloudinary.com/getoutbcn/image/upload/v1652811249/getout/categories/livemusic_lxvc85.jpg",
     color: "#c92d2e",
     description:
-      "Concert venues, small places, squatters with good vibes and good sound and so on",
+      "Concert venues, small places, good vibes. Musicians playing close to the crowd. No big festivals",
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ export const CATEGORIES: Category[] = [
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653668501/getout/categories/shops_cm8r5m.jpg",
 
     color: "#538ff7",
-    description: "Capitalism sucks but there are stores that sell cool stuff.",
+    description: "Stores selling cool stuff. Books, records and so on",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const CATEGORIES: Category[] = [
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653668746/getout/categories/standup_r5vamx.jpg",
     color: "#65b867",
-    description: "Stand up has become trendy, but we need to laugh!",
+    description: "Stand up has become trendy, and that's ok!",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ export const CATEGORIES: Category[] = [
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653669062/getout/categories/cinema_ldhabu.jpg",
 
     color: "#837fba",
-    description: "No blockbusters please",
+    description: "Blockbusters? No. People yelling at the screen? Maybe",
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ export const CATEGORIES: Category[] = [
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653669730/getout/categories/weird_u5dkzt.jpg",
     color: "#e524ae",
     description:
-      "Curious places, for example, where a famous movie was filmed, or where a relevant event took place, etc.",
+      "Curious place e.g., where a famous movie was filmed, or where a relevant event took place, etc.",
   },
   {
     id: 9,

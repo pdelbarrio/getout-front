@@ -2,22 +2,27 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 export const SpotsWrapper = styled.div`
-  gap: var(--padding-s);
   padding-left: 30px;
+  padding-top: 20px;
 
-  > h3 {
-    margin: 30px;
-  }
+  .description {
+    gap: var(--padding-m);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
-  > p {
-    margin: 30px;
+    .title {
+      font-size: 40px;
+    }
   }
 `;
 
 export const SpotsGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: var(--padding-xs);
+  gap: var(--padding-s);
   justify-content: center;
 `;
 
@@ -35,6 +40,11 @@ export const Spot = styled.div`
   gap: var(--padding-s);
   max-width: 300px;
   width: 100%;
+
+  .spotname {
+    font-weight: bolder;
+    font-size: 1.5em;
+  }
 
   .button {
     display: flex;
@@ -61,7 +71,7 @@ export const StyledLinkGo = styled(Link)`
 
 export const StyledLinkBack = styled(Link)`
   text-decoration: none;
-  color: var(--dark);
+  color: var(--text);
   padding: var(--padding-xs);
   border: 2px solid;
   border-radius: 10px;

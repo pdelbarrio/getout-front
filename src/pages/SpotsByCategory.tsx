@@ -9,6 +9,7 @@ import {
   StyledLinkBack,
   StyledLinkGo,
 } from "../ui/Spot";
+import { motion } from "framer-motion";
 
 const SpotsByCategory = () => {
   const { getSpots, spots } = useContext(SpotContext);
@@ -31,13 +32,19 @@ const SpotsByCategory = () => {
   return (
     <SpotsWrapper>
       <StyledLinkBack to={"/categories"}>back</StyledLinkBack>
-
-      <h3>{nameOfCategory}</h3>
-      <p>{description}</p>
+      <div className="description">
+        <h3 className="title">{nameOfCategory}</h3>
+        <p>{description}</p>
+      </div>
       <SpotsGroup>
         {result.map((spot) => (
-          <Spot key={spot._id}>
-            <h4>{spot.name}</h4>
+          <Spot
+            as={motion.div}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.1 }}
+            key={spot._id}
+          >
+            <h4 className="spotname">{spot.name}</h4>
 
             <img src={spot.image} alt={spot.name} />
 

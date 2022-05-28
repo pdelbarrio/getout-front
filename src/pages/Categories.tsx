@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "../constants/categories";
+import { motion } from "framer-motion";
+
 import {
   CategoriesWrapper,
   CategoryLink,
@@ -19,11 +21,23 @@ const Categories = ({ img, color }: Props) => {
         <ul key={type.id}>
           <li>
             <Content color={type.color} img={type.image}>
-              <ContainerDescription>{type.description}</ContainerDescription>
+              <ContainerDescription
+                as={motion.div}
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                whileTap={{ opacity: 1 }}
+              >
+                {type.description}
+              </ContainerDescription>
               <CategoryLink to={`/spots/${type.slug}`}>
-                <div>
-                  <p>{type.name}</p>
-                </div>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1.1 }}
+                >
+                  <div>
+                    <p>{type.name}</p>
+                  </div>
+                </motion.button>
               </CategoryLink>
             </Content>
           </li>

@@ -19,8 +19,8 @@ export const Content = styled.div<{ img: string; color: string }>`
   background-blend-mode: screen;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
+  /* justify-content: flex-end; */
+  /* align-items: stretch; */
 `;
 
 export const ContainerDescription = styled.div`
@@ -30,10 +30,8 @@ export const ContainerDescription = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   margin: auto;
-  /* visibility: hidden; */
 
   &:hover {
-    /* visibility: visible; */
     color: var(--dark) !important;
     cursor: pointer;
     font-weight: bold;
@@ -52,8 +50,8 @@ export const CategoryLink = styled(Link)`
   padding: var(--padding-m);
 
   &:hover {
-    mix-blend-mode: difference;
-    background-color: #c8b6b6;
+    /* mix-blend-mode: difference;
+    background-color: #c8b6b6; */
   }
   &:focus {
     mix-blend-mode: color-burn;
