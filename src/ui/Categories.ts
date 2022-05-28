@@ -42,8 +42,6 @@ export const ContainerDescription = styled.div`
 `;
 
 export const CategoryLink = styled(Link)`
-  /* text-decoration: none; */
-  /* background-color: transparent; */
   font-weight: bold;
   font-size: 30px;
   padding: var(--padding-s);

@@ -19,6 +19,17 @@ const SpotsByCategory = () => {
     getSpots();
   }, []);
 
+  const colors = [
+    "#c92d2e",
+    "#f6bd41",
+    "#538ff7",
+    "#65b867",
+    "#837fba",
+    "#d1903b",
+    "#7d7263",
+    "#e524ae",
+  ];
+
   const result = spots.filter(({ category: v }) => v == type);
 
   const description = CATEGORIES.filter((item) => item.slug == type).map(

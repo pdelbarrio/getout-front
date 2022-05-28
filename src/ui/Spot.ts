@@ -27,7 +27,7 @@ export const SpotsGroup = styled.div`
 `;
 
 export const Spot = styled.div`
-  background-color: var(--green);
+  /* background-color: var(--green); */
   color: var(--dark);
   padding: var(--padding-s);
   border: 2px solid;

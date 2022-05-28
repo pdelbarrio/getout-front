@@ -7,7 +7,6 @@ import {
   CategoryLink,
   ContainerDescription,
   Content,
-  TestDiv,
 } from "../ui/Categories";
 
 export type Props = {
