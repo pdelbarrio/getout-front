@@ -34,6 +34,25 @@ export const create = async (
     } as ErrorPayload;
   }
 };
+export const addToFav = async (
+  axiosInstance: AxiosInstance,
+  params: SpotFormValues
+): Promise<ResponsePayload<Spot> | ErrorPayload> => {
+  try {
+    const response = await axiosInstance.post<Spot>("spots", params);
+    return {
+      status: response.status,
+      data: response.data,
+    };
+  } catch (error) {
+    const { status, data } = (error as AxiosError).response as ErrorResponse;
+
+    return {
+      status,
+      message: data,
+    } as ErrorPayload;
+  }
+};
 
 export const getSpotsFromAPI = async (
   axiosInstance: AxiosInstance

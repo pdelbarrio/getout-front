@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
-import { create, getSpotAxios, getSpotsFromAPI } from "../api/spot.api";
+import {
+  create,
+  getSpotAxios,
+  getSpotsFromAPI,
+  addToFav,
+} from "../api/spot.api";
 import { HTTPStatusCodes, ResponsePayload } from "../types/request.types";
 import { Spot, SpotFormValues } from "../types/spot.types";
 import { setErrorToast } from "../utils/toasts";
@@ -58,6 +63,7 @@ export const SpotContextProvider = ({
     setErrorToast("Error creating");
     return false;
   };
+  const addSpotToFav = async () => {};
 
   return (
     <SpotContext.Provider
