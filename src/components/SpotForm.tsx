@@ -5,7 +5,7 @@ import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
 import { Form, ImageFormContainer, InputImage, Label } from "../ui/form/Form";
 import { Input, Select, TextArea } from "../ui/form/Input";
-import { requiredValidation } from "../utils/forms";
+import { requiredValidation, spotNameValidation } from "../utils/forms";
 import axios from "axios";
 
 export type SpotParams = {
@@ -128,7 +128,7 @@ const SpotForm = ({ onSubmit }: Props) => {
             hasError={!!errors.name}
             placeholder="name of the spot"
             type="text"
-            {...register("name", requiredValidation)}
+            {...register("name", spotNameValidation)}
           />
 
           {errors.name ? <Error>{errors.name.message}</Error> : null}

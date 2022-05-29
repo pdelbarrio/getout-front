@@ -77,7 +77,7 @@ export const CATEGORIES: Category[] = [
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653669730/getout/categories/weird_u5dkzt.jpg",
     color: "#e524ae",
     description:
-      "Curious place e.g., where a famous movie was filmed, or where a relevant event took place, etc.",
+      "Curious places e.g., where a famous movie was filmed, or where a relevant event took place, etc.",
   },
   {
     id: 9,

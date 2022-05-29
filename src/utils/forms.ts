@@ -23,6 +23,36 @@ export const requiredValidation: RegisterOptions = {
   },
 };
 
+export const spotNameValidation: RegisterOptions = {
+  required: {
+    value: true,
+    message: "Name is required",
+  },
+  minLength: {
+    value: 5,
+    message: "The name must have a minimum length of 5 characters.",
+  },
+  maxLength: {
+    value: 100,
+    message: "You have written a name that is too long, please make it shorter",
+  },
+};
+export const spotDescriptionValidation: RegisterOptions = {
+  required: {
+    value: true,
+    message: "Description is required",
+  },
+  minLength: {
+    value: 5,
+    message: "The description have a minimum length of 5 characters.",
+  },
+  maxLength: {
+    value: 1000,
+    message:
+      "You have written a description that is too long, please make it shorter (under 1000 characters) ",
+  },
+};
+
 export const passwordValidation: RegisterOptions = {
   required: {
     value: true,

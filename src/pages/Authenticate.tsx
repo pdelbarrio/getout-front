@@ -147,9 +147,9 @@ const Authenticate = () => {
           <p>
             Welcome! GET OUT BCN is a collaborative database of cool spots in
             Barcelona that don't appear in the typical guidebooks. It is divided
-            into different categories so you can browse. Feel free to register
-            yourself to add spots to the database that you think may be
-            interesting for other users.
+            into different categories. Feel free to register yourself to browse
+            or to add spots to the database that you think may be interesting
+            for other users.
           </p>
           <span>GET OUT!</span>
           <ButtonModal onClick={() => setStateModal(!stateModal)}>
