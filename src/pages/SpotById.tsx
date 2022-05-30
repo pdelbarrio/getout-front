@@ -1,16 +1,20 @@
 import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Favorite from "../components/Favorite";
+import { AuthContext } from "../context/auth.context";
 import { SpotContext } from "../context/spot.context";
 import { ButtonBack, SingleSpot } from "../ui/Spot";
 import { Tag } from "../ui/Tag";
 
 const SpotById = () => {
   const { getSpots, spots } = useContext(SpotContext);
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
     getSpots();
+    console.log(user._id);
   }, []);
 
   const result = spots.filter(({ _id: v }) => v == id);
@@ -27,7 +31,12 @@ const SpotById = () => {
           <h3>{spot.name}</h3>
           <img src={spot.image} alt={spot.name} />
 
-          <button type="button">FAV</button>
+          <Favorite
+            userFrom={user?._id}
+            spotId={spot._id}
+            spotName={spot.name}
+            spotImage={spot.image}
+          />
 
           <h4>
             added by{" "}
