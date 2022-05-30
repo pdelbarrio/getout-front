@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { MenuProvider } from "./context";
 import Navbar from "./components/nav/index";
 import { GlobalStyle } from "./ui/GlobalStyle";
+import FavoritePage from "./pages/FavoritePage";
 
 function App() {
   return (
@@ -92,6 +93,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <SpotById />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="favorites"
+                element={
+                  <ProtectedRoute>
+                    <FavoritePage />
                   </ProtectedRoute>
                 }
               />

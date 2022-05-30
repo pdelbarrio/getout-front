@@ -6,9 +6,10 @@ export type Props = {
   spotId: string;
   spotName: string;
   spotImage: string;
+  spotUrl: string;
 };
 
-function Favorite({ userFrom, spotId, spotName, spotImage }: Props) {
+function Favorite({ userFrom, spotId, spotName, spotImage, spotUrl }: Props) {
   const [favoriteNumber, setFavoriteNumber] = useState<number>(0);
   const [favorited, setFavorited] = useState<boolean>(false);
 
@@ -17,6 +18,7 @@ function Favorite({ userFrom, spotId, spotName, spotImage }: Props) {
     spotId: spotId,
     spotName: spotName,
     spotImage: spotImage,
+    spotUrl: spotUrl,
   };
 
   useEffect(() => {
@@ -32,7 +34,6 @@ function Favorite({ userFrom, spotId, spotName, spotImage }: Props) {
         .post("/favorites/favoritenumber", variable)
         .then((response) => {
           if (response.data.success) {
-            console.log(response.data.favoritenumber);
             setFavoriteNumber(response.data.favoritenumber);
           } else {
             alert("Failed to get favoriteNumber");
@@ -47,7 +48,6 @@ function Favorite({ userFrom, spotId, spotName, spotImage }: Props) {
         .post("/favorites/favorited", variable)
         .then((response) => {
           if (response.data.success) {
-            console.log(response.data.favorited);
             setFavorited(response.data.favorited);
           } else {
             alert("Failed to get Favorite Info");

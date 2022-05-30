@@ -14,7 +14,6 @@ const SpotById = () => {
 
   useEffect(() => {
     getSpots();
-    console.log(user._id);
   }, []);
 
   const result = spots.filter(({ _id: v }) => v == id);
@@ -36,6 +35,7 @@ const SpotById = () => {
             spotId={spot._id}
             spotName={spot.name}
             spotImage={spot.image}
+            spotUrl={spot.website}
           />
 
           <h4>
