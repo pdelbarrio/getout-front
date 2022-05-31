@@ -15,6 +15,7 @@ import { MenuProvider } from "./context";
 import Navbar from "./components/nav/index";
 import { GlobalStyle } from "./ui/GlobalStyle";
 import FavoritePage from "./pages/FavoritePage";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -101,6 +102,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <FavoritePage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="contact"
+                element={
+                  <ProtectedRoute>
+                    <Contact />
                   </ProtectedRoute>
                 }
               />

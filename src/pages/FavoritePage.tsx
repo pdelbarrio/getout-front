@@ -6,7 +6,7 @@ import { FavoritesContainer } from "../ui/FavoritesContainer";
 //FALTA TIPAR TODO:
 
 export type FavoriteSpots = {
-  spotID: string;
+  spotId: string;
   spotName: string;
   spotImage: string;
   spotUrl: string;
@@ -19,26 +19,49 @@ function FavoritePage() {
   const variable = { userFrom: user?._id };
 
   useEffect(() => {
+    getFavoriteSpots().catch(console.error);
+    //
+  }, []);
+
+  const authAxios = axios.create({
+    baseURL: import.meta.env.VITE_API_BASE_URL as string,
+    withCredentials: true,
+  });
+
+  const getFavoriteSpots = async () => {
+    await authAxios
+      .post("/favorites/getfavoritedspots", variable)
+      .then((response) => {
+        if (response.data.success) {
+          setFavoritedSpots(response.data.favorites);
+        } else {
+          alert("Failed to get favorited spots");
+        }
+      });
+  };
+
+  const onClickRemove = async (spotId: string) => {
+    const variable = {
+      spotId: spotId,
+      userFrom: user?._id,
+    };
+
+    console.log(variable);
     const authAxios = axios.create({
       baseURL: import.meta.env.VITE_API_BASE_URL as string,
       withCredentials: true,
     });
 
-    const getFavoriteSpots = async () => {
-      console.log(variable);
-      await authAxios
-        .post("/favorites/getfavoritedspots", variable)
-        .then((response) => {
-          if (response.data.success) {
-            setFavoritedSpots(response.data.favorites);
-          } else {
-            alert("Failed to get favorited spots");
-          }
-        });
-    };
-    getFavoriteSpots().catch(console.error);
-    //
-  }, []);
+    await authAxios
+      .post("/favorites/removefromfavorites", variable)
+      .then((response) => {
+        if (response.data.success) {
+          getFavoriteSpots().catch(console.error);
+        } else {
+          alert("Failed to remove from favorites");
+        }
+      });
+  };
 
   const renderTableBody = favoritedSpots.map((spot, index) => {
     return (
@@ -46,15 +69,17 @@ function FavoritePage() {
         <td>{spot.spotName}</td>
         <td>
           <img
-            style={{ width: "100px" }}
+            style={{ width: "200px" }}
             src={spot.spotImage}
-            alt={spot.spotID}
+            alt={spot.spotId}
           />
         </td>
         <td>
           <a href={spot.spotUrl}>{spot.spotUrl}</a>
         </td>
-        <td>Remove</td>
+        <td>
+          <button onClick={() => onClickRemove(spot.spotId)}>Remove</button>
+        </td>
       </tr>
     );
   });

@@ -19,7 +19,7 @@ export const CATEGORIES: Category[] = [
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653668362/getout/categories/food_oph38m.jpg",
     color: "#f6bd41",
     description:
-      "This is not for fans of El Bulli. Better some cheap patatas bravas and generous sandwiches than to spend a lot of money and go hungry.",
+      "This is not for fans of El Bulli. Better some cheap patatas bravas and generous sandwiches than to spend a lot of money and still get hungry.",
   },
   {
     id: 3,
@@ -48,7 +48,8 @@ export const CATEGORIES: Category[] = [
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653669062/getout/categories/cinema_ldhabu.jpg",
 
     color: "#837fba",
-    description: "Blockbusters? No. People yelling at the screen? Maybe",
+    description:
+      "Blockbusters? No. People yelling at the screen? Maybe. Rare and/or analogic movies? Way better!",
   },
   {
     id: 6,
@@ -106,7 +107,7 @@ export const CATEGORIES: Category[] = [
 
     color: "#65b867",
     description:
-      "Entities with no fixed place or physical location but that organize interesting parties or do cool stuff.",
+      "Organizations with no fixed premises or with no physical location but which do cool things.",
   },
   {
     id: 12,
