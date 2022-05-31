@@ -31,8 +31,6 @@ const SpotsByDistrict = () => {
   ];
 
   const result = spots.filter(({ district: v }) => v == district);
-  console.log(district);
-  console.log(spots);
 
   const nameOfDistrict = DISTRICTS.filter((item) => item.slug == district).map(
     (item) => item.name

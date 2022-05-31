@@ -17,6 +17,7 @@ import { GlobalStyle } from "./ui/GlobalStyle";
 import FavoritePage from "./pages/FavoritePage";
 import Contact from "./pages/Contact";
 import SpotsByDistrict from "./pages/SpotsByDistrict";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <BrowserRouter>
             <MenuProvider>
               <Navbar />
+              <Footer />
             </MenuProvider>
             <Routes>
               <Route index element={<Authenticate />} />
