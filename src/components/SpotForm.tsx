@@ -7,6 +7,7 @@ import { Form, ImageFormContainer, InputImage, Label } from "../ui/form/Form";
 import { Input, Select, TextArea } from "../ui/form/Input";
 import { requiredValidation, spotNameValidation } from "../utils/forms";
 import axios from "axios";
+import { DISTRICTS } from "../constants/districts";
 
 export type SpotParams = {
   name: string;
@@ -14,6 +15,7 @@ export type SpotParams = {
   image: string;
   website: string;
   category: string;
+  district: string;
   location: string;
 };
 
@@ -39,6 +41,7 @@ const SpotForm = ({ onSubmit }: Props) => {
         "https://res.cloudinary.com/getoutbcn/image/upload/v1652182177/getout/samplespot_dhggsh.jpg",
       website: "",
       category: "",
+      district: "",
       location: "",
     },
   });
@@ -88,7 +91,9 @@ const SpotForm = ({ onSubmit }: Props) => {
               {displayFile ? (
                 <p>
                   This will be the image of your spot,{" "}
-                  <span className="sure">if you are sure click upload</span>
+                  <span className="sure">
+                    if you are sure <span className="upload">click upload</span>
+                  </span>
                 </p>
               ) : (
                 <p>
@@ -173,6 +178,23 @@ const SpotForm = ({ onSubmit }: Props) => {
           </Select>
 
           {errors.category ? <Error>{errors.category.message}</Error> : null}
+        </Label>
+
+        <Label>
+          <Select
+            hasError={!!errors.district}
+            {...register("district", requiredValidation)}
+            defaultValue=""
+          >
+            <option value="">District</option>
+            {DISTRICTS.map((district) => (
+              <option key={district.id} value={district.slug}>
+                {district.name}
+              </option>
+            ))}
+          </Select>
+
+          {errors.district ? <Error>{errors.district.message}</Error> : null}
         </Label>
 
         <Label>

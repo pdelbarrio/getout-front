@@ -6,6 +6,7 @@ export type Spot = {
   website: string;
   validated: boolean;
   category: string;
+  district: string;
   location: string;
   uploader: {
     _id: string;

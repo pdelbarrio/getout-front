@@ -49,3 +49,21 @@ export const Button = styled.button<{ variant: ButtonVariants }>`
     background-color: grey;
   }
 `;
+
+export const FavoriteButton = styled.button`
+  text-decoration: none;
+  /* mix-blend-mode: multiply; */
+  background-color: transparent;
+  color: var(--dark);
+  padding: var(--padding-xs);
+  border: 2px solid;
+  border-radius: 10px;
+  max-width: 100px;
+
+  &:hover {
+    color: var(--dark);
+  }
+  &:focus {
+    color: var(--dark);
+  }
+`;

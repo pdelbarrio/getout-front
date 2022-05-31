@@ -16,6 +16,7 @@ import Navbar from "./components/nav/index";
 import { GlobalStyle } from "./ui/GlobalStyle";
 import FavoritePage from "./pages/FavoritePage";
 import Contact from "./pages/Contact";
+import SpotsByDistrict from "./pages/SpotsByDistrict";
 
 function App() {
   return (
@@ -86,6 +87,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <SpotsByCategory />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="district/:district"
+                element={
+                  <ProtectedRoute>
+                    <SpotsByDistrict />
                   </ProtectedRoute>
                 }
               />

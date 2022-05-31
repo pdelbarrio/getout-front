@@ -54,7 +54,6 @@ function FavoritePage() {
       userFrom: user?._id,
     };
 
-    console.log(variable);
     const authAxios = axios.create({
       baseURL: import.meta.env.VITE_API_BASE_URL as string,
       withCredentials: true,

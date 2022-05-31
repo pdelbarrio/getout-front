@@ -6,3 +6,9 @@ export type Category = {
   image: string;
   description: string;
 };
+
+export type District = {
+  id: number;
+  name: string;
+  slug: string;
+};

@@ -123,6 +123,27 @@ export const SingleSpot = styled.div`
   max-width: 700px;
   margin: 0 auto;
 
+  .wrapbuttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name {
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+  }
+  .addedby {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .categorywrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   > a {
     box-shadow: inset 0 0 0 0 var(--dark);
     color: var(--dark);
@@ -138,7 +159,7 @@ export const SingleSpot = styled.div`
 
 export const ButtonBack = styled.button`
   text-decoration: none;
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
   color: var(--dark);
   padding: var(--padding-xs);
   border: 2px solid;

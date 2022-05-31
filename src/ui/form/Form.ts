@@ -39,6 +39,9 @@ export const ImageFormContainer = styled.div`
   .sure {
     font-weight: bold;
   }
+  .upload {
+    text-decoration: underline;
+  }
   .preview {
     max-width: 400px;
   }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Button, FavoriteButton } from "../ui/Button";
 
 export type Props = {
   userFrom?: string;
@@ -93,10 +94,10 @@ function Favorite({ userFrom, spotId, spotName, spotImage, spotUrl }: Props) {
 
   return (
     <div>
-      <button onClick={onClickFavorite}>
-        {favorited ? "Remove from favorites" : "Add to Favorites"}
+      <FavoriteButton onClick={onClickFavorite}>
+        {favorited ? "Remove from favorites" : "Favorited"}
         {favoriteNumber}
-      </button>
+      </FavoriteButton>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Tag = styled.button`
+  margin-top: 10px;
   background-color: var(--dark);
   color: var(--white);
   padding: var(--padding-xs);

@@ -50,8 +50,6 @@ export const SpotContextProvider = ({
   const createSpot = async (values: SpotFormValues): Promise<boolean> => {
     const response = await create(axiosInstance, values);
 
-    console.log("createSpotContextresponse", response);
-
     if (response.status === HTTPStatusCodes.CREATED) {
       return true;
     }
