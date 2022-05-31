@@ -28,7 +28,7 @@ export const SpotsGroup = styled.div`
 
 export const Spot = styled.div`
   /* background-color: var(--green); */
-  color: var(--dark);
+  color: var(--text);
   padding: var(--padding-s);
   border: 2px solid;
   border-radius: 10px;
@@ -51,20 +51,45 @@ export const Spot = styled.div`
     justify-content: space-between;
   }
 `;
-
-export const StyledLinkGo = styled(Link)`
+export const RemoveButton = styled.button`
   text-decoration: none;
-  background-color: var(--green);
-  color: var(--dark);
+  /* mix-blend-mode: multiply; */
+  background-color: transparent;
+  color: var(--text);
   padding: var(--padding-xs);
   border: 2px solid;
   border-radius: 10px;
   max-width: 100px;
 
   &:hover {
+    color: var(--text);
     mix-blend-mode: color-burn;
   }
   &:focus {
+    color: var(--text);
+    mix-blend-mode: color-dodge;
+  }
+`;
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const StyledLinkGo = styled(Link)`
+  text-decoration: none;
+  /* mix-blend-mode: multiply; */
+  color: var(--text);
+  padding: var(--padding-xs);
+  border: 2px solid;
+  border-radius: 10px;
+  max-width: 100px;
+
+  &:hover {
+    color: var(--text);
+    mix-blend-mode: color-burn;
+  }
+  &:focus {
+    color: var(--text);
     mix-blend-mode: color-dodge;
   }
 `;

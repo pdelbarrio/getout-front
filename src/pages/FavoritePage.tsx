@@ -1,7 +1,15 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
-import { FavoritesContainer } from "../ui/FavoritesContainer";
+import {
+  ButtonContainer,
+  RemoveButton,
+  Spot,
+  SpotsGroup,
+  SpotsWrapper,
+  StyledLinkGo,
+} from "../ui/Spot";
+import { motion } from "framer-motion";
 
 //FALTA TIPAR TODO:
 
@@ -63,44 +71,37 @@ function FavoritePage() {
       });
   };
 
-  const renderTableBody = favoritedSpots.map((spot, index) => {
-    return (
-      <tr>
-        <td>{spot.spotName}</td>
-        <td>
-          <img
-            style={{ width: "200px" }}
-            src={spot.spotImage}
-            alt={spot.spotId}
-          />
-        </td>
-        <td>
-          <a href={spot.spotUrl}>{spot.spotUrl}</a>
-        </td>
-        <td>
-          <button onClick={() => onClickRemove(spot.spotId)}>Remove</button>
-        </td>
-      </tr>
-    );
-  });
-
   return (
-    <FavoritesContainer>
-      <h3>My Favorite Spots</h3>
-      <hr />
-      <table>
-        <thead>
-          <tr>
-            <th>Spot Name</th>
-            <th>Photo</th>
-            <th>web</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
+    <SpotsWrapper>
+      <div className="description">
+        <h3 className="title">My Favorites</h3>
+      </div>
+      <SpotsGroup>
+        {favoritedSpots.map((spot) => (
+          <Spot
+            as={motion.div}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.1 }}
+            key={spot.spotId}
+          >
+            <h4 className="spotname">{spot.spotName}</h4>
 
-        <tbody>{renderTableBody}</tbody>
-      </table>
-    </FavoritesContainer>
+            <img src={spot.spotImage} alt={spot.spotName} />
+
+            <ButtonContainer>
+              <div>
+                <RemoveButton onClick={() => onClickRemove(spot.spotId)}>
+                  Remove
+                </RemoveButton>
+              </div>
+              <div>
+                <StyledLinkGo to={`/spot/${spot.spotId}`}>Go!</StyledLinkGo>
+              </div>
+            </ButtonContainer>
+          </Spot>
+        ))}
+      </SpotsGroup>
+    </SpotsWrapper>
   );
 }
 
