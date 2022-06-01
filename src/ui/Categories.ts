@@ -48,3 +48,26 @@ export const CategoryLink = styled(Link)`
   border-radius: 20px;
   cursor: pointer;
 `;
+export const DistrictLink = styled(Link)`
+  margin-top: 10px;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: var(--padding-s);
+  text-align: center;
+  border-radius: 5px;
+  /* font-weight: bold; */
+  max-width: 100px;
+  cursor: pointer;
+`;
+
+export const CatSpottLink = styled(Link)`
+  margin-top: 10px;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: var(--padding-s);
+  text-align: center;
+  border-radius: 5px;
+  /* font-weight: bold; */
+  max-width: 100px;
+  cursor: pointer;
+`;

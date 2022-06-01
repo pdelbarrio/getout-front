@@ -2,10 +2,10 @@ import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { SpotContext } from "../context/spot.context";
 import {
+  FooterGap,
   Spot,
   SpotsGroup,
   SpotsWrapper,
-  StyledLinkBack,
   StyledLinkGo,
 } from "../ui/Spot";
 import { motion } from "framer-motion";
@@ -37,32 +37,35 @@ const SpotsByDistrict = () => {
   );
 
   return (
-    <SpotsWrapper>
-      <div className="description">
-        <h3 className="title"> Spots of {nameOfDistrict}</h3>
-      </div>
-      <SpotsGroup>
-        {result.map((spot) => (
-          <Spot
-            as={motion.div}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.1 }}
-            key={spot._id}
-          >
-            <h4 className="spotname">{spot.name}</h4>
+    <>
+      <SpotsWrapper>
+        <div className="description">
+          <h3 className="title"> Spots of {nameOfDistrict}</h3>
+        </div>
+        <SpotsGroup>
+          {result.map((spot) => (
+            <Spot
+              as={motion.div}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.1 }}
+              key={spot._id}
+            >
+              <h4 className="spotname">{spot.name}</h4>
 
-            <img src={spot.image} alt={spot.name} />
+              <img src={spot.image} alt={spot.name} />
 
-            <div className="button">
-              <div></div>
-              <div>
-                <StyledLinkGo to={`/spot/${spot._id}`}>Go!</StyledLinkGo>
+              <div className="button">
+                <div></div>
+                <div>
+                  <StyledLinkGo to={`/spot/${spot._id}`}>Go!</StyledLinkGo>
+                </div>
               </div>
-            </div>
-          </Spot>
-        ))}
-      </SpotsGroup>
-    </SpotsWrapper>
+            </Spot>
+          ))}
+        </SpotsGroup>
+      </SpotsWrapper>
+      <FooterGap></FooterGap>
+    </>
   );
 };
 

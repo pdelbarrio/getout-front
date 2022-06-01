@@ -8,6 +8,7 @@ import { Input, Select, TextArea } from "../ui/form/Input";
 import { requiredValidation, spotNameValidation } from "../utils/forms";
 import axios from "axios";
 import { DISTRICTS } from "../constants/districts";
+import { FooterGap } from "../ui/Spot";
 
 export type SpotParams = {
   name: string;
@@ -211,6 +212,7 @@ const SpotForm = ({ onSubmit }: Props) => {
           Submit spot
         </Button>
       </Form>
+      <FooterGap></FooterGap>
     </>
   );
 };

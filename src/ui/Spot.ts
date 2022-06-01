@@ -122,7 +122,9 @@ export const SingleSpot = styled.div`
   gap: var(--padding-s);
   max-width: 700px;
   margin: 0 auto;
-
+  .image {
+    border: solid 1px;
+  }
   .wrapbuttons {
     display: flex;
     justify-content: space-between;
@@ -142,6 +144,7 @@ export const SingleSpot = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 2em;
   }
 
   > a {
@@ -172,4 +175,9 @@ export const ButtonBack = styled.button`
   &:focus {
     mix-blend-mode: color-dodge;
   }
+`;
+
+export const FooterGap = styled.div`
+  //
+  height: 50px;
 `;

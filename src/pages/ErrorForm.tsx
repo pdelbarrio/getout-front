@@ -1,13 +1,12 @@
 import colau from "/colau404.gif";
-import { Error } from "../ui/Error";
-import "./ErrorForm.css";
+import { Error, ErrorContainer } from "../ui/Error";
 
 const ErrorForm = () => {
   return (
-    <div className="container">
+    <ErrorContainer>
       <img className="error" src={colau} alt="Error 404" />
-      <Error size="xl">404 Not Found</Error>
-    </div>
+      <Error size="l">404 | Not Found</Error>
+    </ErrorContainer>
   );
 };
 

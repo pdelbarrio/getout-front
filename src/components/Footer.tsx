@@ -8,11 +8,11 @@ const Footer = () => {
     <FooterContainer>
       <p>
         done by
-        <a href="https://pablo.lol/" target="_blank">
+        <a href="https://pablo.lol/" className="portfolio" target="_blank">
           Pablo
         </a>
       </p>
-      <div>
+      <div className="smiley">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -41,11 +41,36 @@ const FooterContainer = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
   background: var(--bg);
   display: flex;
   z-index: 10;
 
-  a {
+  .smiley > svg {
+    transform: rotateX(180deg);
+  }
+
+  .portfolio {
+    padding-left: 3px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--text);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 2px;
+      width: 0;
+      background: var(--text);
+      transition: width 150ms linear;
+    }
+    &:hover::before {
+      width: 100%;
+    }
   }
 `;

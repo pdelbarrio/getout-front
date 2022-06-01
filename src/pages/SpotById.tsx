@@ -3,9 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import Favorite from "../components/Favorite";
 import { AuthContext } from "../context/auth.context";
 import { SpotContext } from "../context/spot.context";
-import { CategoryLink } from "../ui/Categories";
-import { ButtonBack, SingleSpot } from "../ui/Spot";
-import { Tag } from "../ui/Tag";
+import { CatSpottLink, DistrictLink } from "../ui/Categories";
+import { ButtonBack, FooterGap, SingleSpot } from "../ui/Spot";
 
 const SpotById = () => {
   const { getSpots, spots } = useContext(SpotContext);
@@ -29,7 +28,7 @@ const SpotById = () => {
       {result.map((spot) => (
         <SingleSpot key={spot._id}>
           <h3>{spot.name}</h3>
-          <img src={spot.image} alt={spot.name} />
+          <img className="image" src={spot.image} alt={spot.name} />
           <div className="addedby">
             <div></div>
             <h4>
@@ -48,16 +47,17 @@ const SpotById = () => {
           </a>
           <div className="categorywrap">
             <div>
-              <h4>category</h4>
-              <Tag>{spot.category}</Tag>
+              <CatSpottLink to={`/spots/${spot.category}`}>
+                {spot.category}
+              </CatSpottLink>
             </div>
             <div>
-              <h4>district</h4>
-              <CategoryLink to={`/district/${spot.district}`}>
-                <Tag>{spot.district}</Tag>
-              </CategoryLink>
+              <DistrictLink to={`/district/${spot.district}`}>
+                {spot.district}
+              </DistrictLink>
             </div>
           </div>
+
           <h4>location</h4>
 
           <p>{spot.location}</p>
@@ -73,6 +73,7 @@ const SpotById = () => {
           </div>
         </SingleSpot>
       ))}
+      <FooterGap></FooterGap>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import {
   ButtonContainer,
+  FooterGap,
   RemoveButton,
   Spot,
   SpotsGroup,
@@ -100,6 +101,7 @@ function FavoritePage() {
           </Spot>
         ))}
       </SpotsGroup>
+      <FooterGap></FooterGap>
     </SpotsWrapper>
   );
 }
