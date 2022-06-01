@@ -1,4 +1,3 @@
-// import { useMenuContext } from "../../state";
 import { useMenuContext } from "../../context";
 import { useTheme } from "../../hooks";
 import Icon from "../Icon";
@@ -6,8 +5,28 @@ import { LogoutButton, NavLink, NavLinksWrapper } from "../../ui/nav/NavLinks";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
-// FIXME: Make and object with slug and name to map by link and show the string
-export const links = ["contact", "new-spot", "categories", "favorites"];
+export const links = [
+  {
+    id: 1,
+    slug: "contact",
+    name: "Contact",
+  },
+  {
+    id: 2,
+    slug: "new-spot",
+    name: "New Spot",
+  },
+  {
+    id: 3,
+    slug: "categories",
+    name: "Categories",
+  },
+  {
+    id: 4,
+    slug: "favorites",
+    name: "Favorites",
+  },
+];
 
 const DesktopNavLinks = () => {
   const { closeMenu } = useMenuContext();
@@ -17,9 +36,9 @@ const DesktopNavLinks = () => {
   return (
     <NavLinksWrapper className="nav-links">
       {links.map((link) => (
-        <li key={link}>
-          <NavLink to={`/${link}`} className="link" onClick={closeMenu}>
-            {link}
+        <li key={link.id}>
+          <NavLink to={`/${link.slug}`} className="link" onClick={closeMenu}>
+            {link.name}
           </NavLink>
         </li>
       ))}

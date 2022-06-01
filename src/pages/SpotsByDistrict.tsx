@@ -39,7 +39,7 @@ const SpotsByDistrict = () => {
   return (
     <SpotsWrapper>
       <div className="description">
-        <h3 className="title"> {nameOfDistrict}</h3>
+        <h3 className="title"> Spots of {nameOfDistrict}</h3>
       </div>
       <SpotsGroup>
         {result.map((spot) => (

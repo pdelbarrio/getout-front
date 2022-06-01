@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
 const Footer = () => {
@@ -8,7 +7,7 @@ const Footer = () => {
   return authenticated ? (
     <FooterContainer>
       <p>
-        Done by
+        done by
         <a href="https://pablo.lol/" target="_blank">
           Pablo
         </a>
@@ -36,6 +35,8 @@ const FooterContainer = styled.div`
   height: "80px";
   justify-content: space-between;
   padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   font-size: 12px;
   position: fixed;
   bottom: 0;
@@ -43,6 +44,7 @@ const FooterContainer = styled.div`
   width: 100%;
   background: var(--bg);
   display: flex;
+  z-index: 10;
 
   a {
   }
