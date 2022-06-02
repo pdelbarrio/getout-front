@@ -17,6 +17,11 @@ function ModalInfo({ stateModal, setStateModal }: Props) {
           to add spots to the database that you think may be interesting for
           other users.
         </p>
+        <p>
+          This application has just started, so expect improvements to be made
+          over time. If you find any bugs or have any suggestions or whatever,
+          you can make them in the contact section.
+        </p>
         <span>GET OUT!</span>
         <ButtonModal onClick={() => setStateModal(!stateModal)}>
           I GET IT!

@@ -146,23 +146,33 @@ export const SingleSpot = styled.div`
     align-items: center;
     padding: 2em;
   }
-
   > a {
-    box-shadow: inset 0 0 0 0 var(--dark);
-    color: var(--dark);
-    margin: 0 -0.25rem;
-    padding: 0 0.25rem;
-    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  a:hover {
-    box-shadow: inset 15vw 0 0 0 var(--dark);
+    position: relative;
     color: white;
+    text-decoration: none;
+    color: var(--dark);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 2px;
+      width: 0;
+      background: var(--dark);
+      transition: width 150ms linear;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+    .smiley > svg {
+      transform: rotateX(180deg);
+    }
   }
 `;
 
 export const ButtonBack = styled.button`
   text-decoration: none;
-  /* mix-blend-mode: multiply; */
   color: var(--dark);
   padding: var(--padding-xs);
   border: 2px solid;

@@ -1,21 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { CATEGORIES } from "../constants/categories";
 import { SpotContext } from "../context/spot.context";
 import {
   FooterGap,
   Spot,
   SpotsGroup,
   SpotsWrapper,
-  StyledLinkBack,
   StyledLinkGo,
 } from "../ui/Spot";
 import { motion } from "framer-motion";
 
-const SpotsByCategory = () => {
+const AddedByPage = () => {
   const { getSpots, spots } = useContext(SpotContext);
-  const { type } = useParams<{ type?: string }>();
-  const [spotsWithBg, setSpotsWithBg] = useState<string>([]);
+  const { userId } = useParams<{ userId?: string }>();
 
   useEffect(() => {
     getSpots();
@@ -32,30 +29,15 @@ const SpotsByCategory = () => {
     "#e524ae",
   ];
 
-  const result = spots.filter(({ category: v }) => v == type);
+  const result = spots.filter((spot) => spot.uploader._id === userId);
 
-  const description = CATEGORIES.filter((item) => item.slug == type).map(
-    (item) => item.description
-  );
-
-  const nameOfCategory = CATEGORIES.filter((item) => item.slug == type).map(
-    (item) => item.name
-  );
-
-  // Para lograr un bg diferente en cada uno tendría que generar un nuevo array que incluyese los spots y un campo de bg
-  //  const bgFunction = () => {
-  //   const newArray = result.map(spot => ({...spot, bgColor: "#c92d2e"}))
-  //   console.log(newArray)
-  //   return newArray;
-  // };
+  const userName = result[0].uploader.username;
 
   return (
     <>
       <SpotsWrapper>
-        <StyledLinkBack to={"/categories"}>back</StyledLinkBack>
         <div className="description">
-          <h3 className="title">{nameOfCategory}</h3>
-          <p>{description}</p>
+          <h3 className="title"> Spots added by {userName}</h3>
         </div>
         <SpotsGroup>
           {result.map((spot) => (
@@ -84,4 +66,4 @@ const SpotsByCategory = () => {
   );
 };
 
-export default SpotsByCategory;
+export default AddedByPage;

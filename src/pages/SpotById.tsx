@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Favorite from "../components/Favorite";
 import { AuthContext } from "../context/auth.context";
 import { SpotContext } from "../context/spot.context";
@@ -29,7 +29,8 @@ const SpotById = () => {
         <SingleSpot key={spot._id}>
           <h3>{spot.name}</h3>
           <img className="image" src={spot.image} alt={spot.name} />
-          <div className="addedby">
+
+          <Link className="addedby" to={`/addedby/${spot.uploader._id}`}>
             <div></div>
             <h4>
               added by{" "}
@@ -39,7 +40,8 @@ const SpotById = () => {
                 <span className="name">@{spot.uploader.username}</span>
               )}
             </h4>
-          </div>
+          </Link>
+
           <p>{spot.description}</p>
           <h4>url</h4>
           <a target="_blank" className="spoturl" href={spot.website}>

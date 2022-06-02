@@ -17,6 +17,7 @@ import FavoritePage from "./pages/FavoritePage";
 import Contact from "./pages/Contact";
 import SpotsByDistrict from "./pages/SpotsByDistrict";
 import Footer from "./components/Footer";
+import AddedByPage from "./pages/AddedByPage";
 
 function App() {
   return (
@@ -71,6 +72,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <SpotFormPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="addedby/:userId"
+                element={
+                  <ProtectedRoute>
+                    <AddedByPage />
                   </ProtectedRoute>
                 }
               />

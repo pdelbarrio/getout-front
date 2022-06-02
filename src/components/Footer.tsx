@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { FooterContainer } from "../ui/Footer";
