@@ -1,17 +1,18 @@
 import styled from "@emotion/styled";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import { FooterContainer } from "../ui/Footer";
 
 const Footer = () => {
   const { authenticated } = useContext(AuthContext);
   return authenticated ? (
     <FooterContainer>
-      <p>
-        done by
+      <div className="footerleft">
+        <p className="doneby">done by</p>
         <a href="https://pablo.lol/" className="portfolio" target="_blank">
           Pablo
         </a>
-      </p>
+      </div>
       <div className="smiley">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -30,47 +31,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-const FooterContainer = styled.div`
-  height: "80px";
-  justify-content: space-between;
-  padding: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-size: 12px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background: var(--bg);
-  display: flex;
-  z-index: 10;
-
-  .smiley > svg {
-    transform: rotateX(180deg);
-  }
-
-  .portfolio {
-    padding-left: 3px;
-    position: relative;
-    color: white;
-    text-decoration: none;
-    text-transform: capitalize;
-    color: var(--text);
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      height: 2px;
-      width: 0;
-      background: var(--text);
-      transition: width 150ms linear;
-    }
-    &:hover::before {
-      width: 100%;
-    }
-  }
-`;

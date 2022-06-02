@@ -42,7 +42,7 @@ const SpotById = () => {
           </div>
           <p>{spot.description}</p>
           <h4>url</h4>
-          <a target="_blank" href={spot.website}>
+          <a target="_blank" className="spoturl" href={spot.website}>
             {spot.website}
           </a>
           <div className="categorywrap">
