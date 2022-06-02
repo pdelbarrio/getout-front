@@ -9,6 +9,7 @@ export const CategoriesWrapper = styled.div`
   gap: var(--padding-xs);
   justify-content: center;
   overflow: hidden;
+  resize: both;
 `;
 
 export const Content = styled.div<{ img: string; color: string }>`

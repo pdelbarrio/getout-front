@@ -54,7 +54,6 @@ const SpotForm = ({ onSubmit }: Props) => {
   };
 
   const onSubmitFile = async (file: any) => {
-    console.log(file);
     //here, we are creatingng a new FormData object; this lets you compile a set of key/value pairs.
     var data = new FormData();
     // we are appending a new value onto an existing key inside a FormData object. the keys here are what is required for the upload by the cloudinary endpoint. the value in line 7 is your upload preset
@@ -66,7 +65,7 @@ const SpotForm = ({ onSubmit }: Props) => {
         `https://api.cloudinary.com/v1_1/getoutbcn/image/upload`,
         data
       );
-      console.log(response.data);
+
       //if a response is gotten, we set the selectedFile to null(this is also the original value while desclaring the state variable
       if (response.data) {
         setSelectedFile(null);

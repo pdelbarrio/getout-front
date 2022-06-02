@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import SpotForm, { SpotParams } from "../components/SpotForm";
 import { SpotContext } from "../context/spot.context";
 import { FormLayout } from "../ui/layouts/FormLayout";
+import { FooterGap } from "../ui/Spot";
 import { setErrorToast, setSuccessToast } from "../utils/toasts";
 
 const SpotFormPage = () => {
@@ -23,11 +24,14 @@ const SpotFormPage = () => {
   };
 
   return (
-    <FormLayout>
-      <h3>Create your spot</h3>
+    <>
+      <FormLayout>
+        <h3>Create your spot</h3>
 
-      <SpotForm onSubmit={submitNewSpot} />
-    </FormLayout>
+        <SpotForm onSubmit={submitNewSpot} />
+      </FormLayout>
+      <FooterGap></FooterGap>
+    </>
   );
 };
 

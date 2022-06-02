@@ -6,6 +6,7 @@ import { Form } from "../ui/form/Form";
 import { FormLayout } from "../ui/layouts/FormLayout";
 import Swal from "sweetalert2";
 import { setErrorToast, setSuccessToast } from "../utils/toasts";
+import { FooterGap } from "../ui/Spot";
 
 const SERVICE_ID = "service_d9ceky2";
 const TEMPLATE_ID = "template_fln43aq";
@@ -37,41 +38,44 @@ const Contact = () => {
   };
 
   return (
-    <FormLayout>
-      <div className="contacttext">
-        <h3>
-          If you want to flatter us, or have a suggestion, or want to pay for
-          our servers or whatever, we will be happy to help you
-        </h3>
-      </div>
-      <Form onSubmit={onSubmit}>
-        <InputContact
-          type="email"
-          name="email"
-          placeholder="Your email"
-          value={toSend.email}
-          onChange={handleChange}
-        />
+    <>
+      <FormLayout>
+        <div className="contacttext">
+          <h3>
+            If you want to flatter us, or have a suggestion, or want to pay for
+            our servers or whatever, we will be happy to help you
+          </h3>
+        </div>
+        <Form onSubmit={onSubmit}>
+          <InputContact
+            type="email"
+            name="email"
+            placeholder="Your email"
+            value={toSend.email}
+            onChange={handleChange}
+          />
 
-        <InputContact
-          type="text"
-          name="name"
-          placeholder="Your name"
-          value={toSend.name}
-          onChange={handleChange}
-        />
-        <TextAreaContact
-          rows={10}
-          name="message"
-          placeholder="Your message"
-          value={toSend.message}
-          onChange={handleChange}
-        />
-        <Button variant="white" type="submit">
-          Submit
-        </Button>
-      </Form>
-    </FormLayout>
+          <InputContact
+            type="text"
+            name="name"
+            placeholder="Your name"
+            value={toSend.name}
+            onChange={handleChange}
+          />
+          <TextAreaContact
+            rows={10}
+            name="message"
+            placeholder="Your message"
+            value={toSend.message}
+            onChange={handleChange}
+          />
+          <Button variant="white" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </FormLayout>
+      <FooterGap></FooterGap>
+    </>
   );
 };
 
