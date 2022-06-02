@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { SpotContext } from "../context/spot.context";
 import {
   FooterGap,
@@ -43,9 +43,9 @@ const AddedByPage = () => {
           {result.map((spot) => (
             <Spot
               as={motion.div}
+              key={spot._id}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.1 }}
-              key={spot._id}
             >
               <h4 className="spotname">{spot.name}</h4>
 

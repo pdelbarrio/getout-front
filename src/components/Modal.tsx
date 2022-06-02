@@ -3,7 +3,7 @@ import { ModalContainer, ModalHeader, Overlay, CloseButton } from "../ui/Modal";
 export type Props = {
   children: React.ReactNode;
   stateModal: boolean;
-  setStateModal: () => void;
+  setStateModal: (stateModal: boolean) => void;
 };
 
 const Modal = ({ children, stateModal, setStateModal }: Props) => {
@@ -13,7 +13,7 @@ const Modal = ({ children, stateModal, setStateModal }: Props) => {
         <Overlay>
           <ModalContainer>
             <ModalHeader></ModalHeader>
-            <CloseButton onClick={() => setStateModal(false)}>
+            <CloseButton onClick={() => setStateModal(!stateModal)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

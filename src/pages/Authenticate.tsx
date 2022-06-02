@@ -16,21 +16,15 @@ import "./video.css";
 import bgVideo from "../video/bgvideo.mp4";
 import { useNavigate } from "react-router-dom";
 import { setErrorToast } from "../utils/toasts";
-import {
-  ButtonContainer,
-  ButtonInfoModal,
-  ButtonModal,
-  Container,
-} from "../ui/Modal";
-import Modal from "../components/Modal";
+import { ButtonContainer, ButtonInfoModal } from "../ui/Modal";
 import ModalInfo from "./ModalInfo";
 
 const Authenticate = () => {
   const [userEmail, setUserEmail] = useState("");
   const [formVariant, setFormVariant] = useState<"register" | "login">("login");
   const [videoswitch, setVideo] = useState(true);
-  const [stateModal, setStateModal] = useState(false);
-  const videoRef = useRef(null);
+  const [stateModal, setStateModal] = useState<boolean>(false);
+  const videoRef = useRef<HTMLMediaElement | any>(null);
   const { login, register, authenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -49,12 +43,12 @@ const Authenticate = () => {
   };
 
   const handleVideo = () => {
-    if (videoRef.current.paused) {
+    if (videoRef.current?.paused) {
       setVideo(true);
       videoRef.current.play();
     } else {
       setVideo(false);
-      videoRef.current.pause();
+      videoRef.current?.pause();
     }
   };
 

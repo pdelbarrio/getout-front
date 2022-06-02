@@ -15,7 +15,6 @@ import { motion } from "framer-motion";
 const SpotsByCategory = () => {
   const { getSpots, spots } = useContext(SpotContext);
   const { type } = useParams<{ type?: string }>();
-  const [spotsWithBg, setSpotsWithBg] = useState<string>([]);
 
   useEffect(() => {
     getSpots();

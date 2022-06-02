@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { SetStateAction, useState } from "react";
+import { useForm } from "react-hook-form";
 import { CATEGORIES } from "../constants/categories";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
@@ -50,7 +50,9 @@ const SpotForm = ({ onSubmit }: Props) => {
   const onChange = (e: any) => {
     const { files } = e.target;
     setSelectedFile(files[0]);
-    setDisplayFile(URL.createObjectURL(files[0]));
+    setDisplayFile(
+      URL.createObjectURL(files[0]) as unknown as SetStateAction<null>
+    );
   };
 
   const onSubmitFile = async (file: any) => {
@@ -72,11 +74,11 @@ const SpotForm = ({ onSubmit }: Props) => {
         // the API call returns a response that includes the URLs for accessing the uploaded file. here, when we have a response, we call setUploadedImage with a new value.
         setUploadedImage(response.data.secure_url);
         setValue("image", response.data.secure_url);
-        setDisplayFile("");
+        setDisplayFile(null);
       }
-    } catch (e) {
+    } catch (e: unknown) {
       //logthe error if any here. you can as well display them to the users
-      console.log(e.response);
+      console.error(errors);
       // set the state of loading to 0 if there is an error
     }
   };
