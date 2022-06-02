@@ -1,9 +1,10 @@
 import Modal from "../components/Modal";
+import { Dispatch, SetStateAction } from "react";
 import { ButtonModal, Container } from "../ui/Modal";
 
 export type Props = {
   stateModal: boolean;
-  setStateModal: () => void;
+  setStateModal: Dispatch<SetStateAction<boolean>>;
 };
 
 function ModalInfo({ stateModal, setStateModal }: Props) {
@@ -23,7 +24,9 @@ function ModalInfo({ stateModal, setStateModal }: Props) {
           you can make them in the contact section.
         </p>
         <span>GET OUT!</span>
-        <ButtonModal onClick={() => setStateModal()}>I GET IT!</ButtonModal>
+        <ButtonModal onClick={() => setStateModal(!setStateModal)}>
+          I GET IT!
+        </ButtonModal>
       </Container>
     </Modal>
   );

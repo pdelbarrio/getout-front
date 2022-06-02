@@ -23,7 +23,7 @@ const Authenticate = () => {
   const [userEmail, setUserEmail] = useState("");
   const [formVariant, setFormVariant] = useState<"register" | "login">("login");
   const [videoswitch, setVideo] = useState(true);
-  const [stateModal, setStateModal] = useState<boolean>(false);
+  const [stateModal, setStateModal] = useState(false);
   const videoRef = useRef<HTMLMediaElement | any>(null);
   const { login, register, authenticated } = useContext(AuthContext);
   const navigate = useNavigate();
