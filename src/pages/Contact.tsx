@@ -4,7 +4,6 @@ import { Button } from "../ui/Button";
 import { InputContact, TextAreaContact } from "../ui/form/Contact";
 import { Form } from "../ui/form/Form";
 import { FormLayout } from "../ui/layouts/FormLayout";
-import Swal from "sweetalert2";
 import { setErrorToast, setSuccessToast } from "../utils/toasts";
 import { FooterGap } from "../ui/Spot";
 
