@@ -95,7 +95,7 @@ function Favorite({ userFrom, spotId, spotName, spotImage, spotUrl }: Props) {
   return (
     <div>
       <FavoriteButton onClick={onClickFavorite}>
-        {favorited ? "Remove from favorites" : "Favorited"}
+        {favorited ? "Remove from favorites " : "Favorited "}
         {favoriteNumber}
       </FavoriteButton>
     </div>

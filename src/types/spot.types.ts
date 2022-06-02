@@ -13,7 +13,7 @@ export type Spot = {
     username: string;
     email: string;
     avatar: string;
-    isAdmin: boolean;
+    role: string;
     spots?: string[];
     favSpots?: string[];
     createdAt: string;

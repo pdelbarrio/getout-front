@@ -5,7 +5,7 @@ export type User = {
   _id: string;
   spots?: string[];
   favSpots?: string[];
-  isAdmin?: boolean;
+  role: string;
 };
 
 export type UserData = {

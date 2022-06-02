@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { CATEGORIES } from "../constants/categories";
 import { motion } from "framer-motion";
 

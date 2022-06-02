@@ -44,7 +44,11 @@ const SpotsByCategory = () => {
   );
 
   //Para lograr un bg diferente en cada uno tendría que generar un nuevo array que incluyese los spots y un campo de bg
-  const bgFunction = () => {};
+  //  const bgFunction = () => {
+  //   const newArray = result.map(spot => ({...spot, bgColor: "#c92d2e"}))
+  //   console.log(newArray)
+  //   return newArray;
+  // };
 
   return (
     <>
