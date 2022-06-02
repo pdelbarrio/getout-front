@@ -1,13 +1,7 @@
 import { useContext, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { SpotContext } from "../context/spot.context";
-import {
-  FooterGap,
-  Spot,
-  SpotsGroup,
-  SpotsWrapper,
-  StyledLinkGo,
-} from "../ui/Spot";
+import { FooterGap, SpotsGroup, SpotsWrapper, StyledLinkGo } from "../ui/Spot";
 import { motion } from "framer-motion";
 import { DISTRICTS } from "../constants/districts";
 
@@ -44,8 +38,8 @@ const SpotsByDistrict = () => {
         </div>
         <SpotsGroup>
           {result.map((spot) => (
-            <Spot
-              as={motion.div}
+            <motion.div
+              className="spotcard"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.1 }}
               key={spot._id}
@@ -60,7 +54,7 @@ const SpotsByDistrict = () => {
                   <StyledLinkGo to={`/spot/${spot._id}`}>Go!</StyledLinkGo>
                 </div>
               </div>
-            </Spot>
+            </motion.div>
           ))}
         </SpotsGroup>
       </SpotsWrapper>

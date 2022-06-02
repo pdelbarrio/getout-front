@@ -5,14 +5,11 @@ import {
   ButtonContainer,
   FooterGap,
   RemoveButton,
-  Spot,
   SpotsGroup,
   SpotsWrapper,
   StyledLinkGo,
 } from "../ui/Spot";
 import { motion } from "framer-motion";
-
-//FALTA TIPAR TODO:
 
 export type FavoriteSpots = {
   spotId: string;
@@ -78,8 +75,8 @@ function FavoritePage() {
       </div>
       <SpotsGroup>
         {favoritedSpots.map((spot) => (
-          <Spot
-            as={motion.div}
+          <motion.div
+            className="spotcard"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 1.1 }}
             key={spot.spotId}
@@ -98,7 +95,7 @@ function FavoritePage() {
                 <StyledLinkGo to={`/spot/${spot.spotId}`}>Go!</StyledLinkGo>
               </div>
             </ButtonContainer>
-          </Spot>
+          </motion.div>
         ))}
       </SpotsGroup>
       <FooterGap></FooterGap>

@@ -24,33 +24,58 @@ export const SpotsGroup = styled.div`
   flex-wrap: wrap;
   gap: var(--padding-s);
   justify-content: center;
-`;
 
-export const Spot = styled.div`
-  /* background-color: var(--green); */
-  color: var(--text);
-  padding: var(--padding-s);
-  border: 2px solid;
-  border-radius: 10px;
+  .spotcard {
+    color: var(--text);
+    padding: var(--padding-s);
+    border: 2px solid;
+    border-radius: 10px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  gap: var(--padding-s);
-  max-width: 300px;
-  width: 100%;
-
-  .spotname {
-    font-weight: bolder;
-    font-size: 1.5em;
-  }
-
-  .button {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: var(--padding-s);
+    max-width: 300px;
+    width: 100%;
+
+    .spotname {
+      font-weight: bolder;
+      font-size: 1.5em;
+    }
+
+    .button {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 `;
+
+// export const Spot = styled.div`
+//   /* background-color: var(--green); */
+//   color: var(--text);
+//   padding: var(--padding-s);
+//   border: 2px solid;
+//   border-radius: 10px;
+
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+
+//   gap: var(--padding-s);
+//   max-width: 300px;
+//   width: 100%;
+
+//   .spotname {
+//     font-weight: bolder;
+//     font-size: 1.5em;
+//   }
+
+//   .button {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+// `;
 export const RemoveButton = styled.button`
   text-decoration: none;
   /* mix-blend-mode: multiply; */

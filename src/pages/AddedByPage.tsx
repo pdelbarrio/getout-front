@@ -1,13 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { SpotContext } from "../context/spot.context";
-import {
-  FooterGap,
-  Spot,
-  SpotsGroup,
-  SpotsWrapper,
-  StyledLinkGo,
-} from "../ui/Spot";
+import { FooterGap, SpotsGroup, SpotsWrapper, StyledLinkGo } from "../ui/Spot";
 import { motion } from "framer-motion";
 
 const AddedByPage = () => {
@@ -41,11 +35,11 @@ const AddedByPage = () => {
         </div>
         <SpotsGroup>
           {result.map((spot) => (
-            <Spot
-              as={motion.div}
-              key={spot._id}
+            <motion.div
+              className="spotcard"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.1 }}
+              key={spot._id}
             >
               <h4 className="spotname">{spot.name}</h4>
 
@@ -57,7 +51,7 @@ const AddedByPage = () => {
                   <StyledLinkGo to={`/spot/${spot._id}`}>Go!</StyledLinkGo>
                 </div>
               </div>
-            </Spot>
+            </motion.div>
           ))}
         </SpotsGroup>
       </SpotsWrapper>
