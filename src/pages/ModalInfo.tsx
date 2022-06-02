@@ -23,9 +23,7 @@ function ModalInfo({ stateModal, setStateModal }: Props) {
           you can make them in the contact section.
         </p>
         <span>GET OUT!</span>
-        <ButtonModal onClick={() => setStateModal(!stateModal)}>
-          I GET IT!
-        </ButtonModal>
+        <ButtonModal onClick={() => setStateModal()}>I GET IT!</ButtonModal>
       </Container>
     </Modal>
   );
