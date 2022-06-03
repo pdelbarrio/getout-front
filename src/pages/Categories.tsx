@@ -26,7 +26,6 @@ const Categories = ({ img, color }: Props) => {
                   as={motion.div}
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
-                  whileTap={{ opacity: 1 }}
                 >
                   {type.description}
                 </ContainerDescription>
@@ -34,7 +33,7 @@ const Categories = ({ img, color }: Props) => {
                   <motion.button
                     className="buttoncontainer"
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 1.1 }}
+                    // whileTap={{ scale: 1.1 }}
                   >
                     <p>{type.name}</p>
                   </motion.button>
