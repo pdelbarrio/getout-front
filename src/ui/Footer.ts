@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FooterContainer = styled.div`
   height: "80px";
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
   padding-left: 30px;
   padding-right: 30px;
   font-size: 12px;
@@ -42,8 +42,9 @@ export const FooterContainer = styled.div`
     &:hover::before {
       width: 100%;
     }
-    .smiley > svg {
-      transform: rotateX(180deg);
-    }
+  }
+
+  .smiley {
+    transform: rotateX(180deg);
   }
 `;

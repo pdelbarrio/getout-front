@@ -4,7 +4,7 @@ import Favorite from "../components/Favorite";
 import { AuthContext } from "../context/auth.context";
 import { SpotContext } from "../context/spot.context";
 import { CatSpottLink, DistrictLink } from "../ui/Categories";
-import { ButtonBack, FooterGap, SingleSpot } from "../ui/Spot";
+import { ButtonBack, FooterGap, SingleSpot, SpotContainer } from "../ui/Spot";
 
 const SpotById = () => {
   const { getSpots, spots } = useContext(SpotContext);
@@ -24,7 +24,7 @@ const SpotById = () => {
   };
 
   return (
-    <div>
+    <SpotContainer>
       {result.map((spot) => (
         <SingleSpot key={spot._id}>
           <h3>{spot.name}</h3>
@@ -76,7 +76,7 @@ const SpotById = () => {
         </SingleSpot>
       ))}
       <FooterGap></FooterGap>
-    </div>
+    </SpotContainer>
   );
 };
 

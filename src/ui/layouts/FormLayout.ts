@@ -9,7 +9,7 @@ export const FormLayout = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--padding-s);
-  max-width: 700px;
+  width: 100%;
   margin: 0 auto;
 
   > h3 {

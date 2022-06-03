@@ -3,7 +3,13 @@ import { useForm } from "react-hook-form";
 import { CATEGORIES } from "../constants/categories";
 import { Button } from "../ui/Button";
 import { Error } from "../ui/Error";
-import { Form, ImageFormContainer, InputImage, Label } from "../ui/form/Form";
+import {
+  Form,
+  FormContainer,
+  ImageFormContainer,
+  InputImage,
+  Label,
+} from "../ui/form/Form";
 import { Input, Select, TextArea } from "../ui/form/Input";
 import { requiredValidation, spotNameValidation } from "../utils/forms";
 import axios from "axios";
@@ -85,7 +91,7 @@ const SpotForm = ({ onSubmit }: Props) => {
 
   // We create onSubmit as props to make the father component (where <LoginForm/> is ) control the submit
   return (
-    <>
+    <FormContainer>
       <ImageFormContainer>
         <div className="container">
           {uploadedImage ? null : (
@@ -121,6 +127,14 @@ const SpotForm = ({ onSubmit }: Props) => {
           )}
           {displayFile ? (
             <img className="preview" alt="preview" src={displayFile} />
+          ) : null}
+          {displayFile ? (
+            <p>
+              This will be the image of your spot,{" "}
+              <span className="sure">
+                if you are sure <span className="upload">click upload</span>
+              </span>
+            </p>
           ) : null}
         </div>
 
@@ -214,7 +228,7 @@ const SpotForm = ({ onSubmit }: Props) => {
         </Button>
       </Form>
       <FooterGap></FooterGap>
-    </>
+    </FormContainer>
   );
 };
 

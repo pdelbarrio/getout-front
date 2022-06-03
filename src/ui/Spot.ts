@@ -51,34 +51,8 @@ export const SpotsGroup = styled.div`
   }
 `;
 
-// export const Spot = styled.div`
-//   /* background-color: var(--green); */
-//   color: var(--text);
-//   padding: var(--padding-s);
-//   border: 2px solid;
-//   border-radius: 10px;
-
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-
-//   gap: var(--padding-s);
-//   max-width: 300px;
-//   width: 100%;
-
-//   .spotname {
-//     font-weight: bolder;
-//     font-size: 1.5em;
-//   }
-
-//   .button {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-// `;
 export const RemoveButton = styled.button`
   text-decoration: none;
-  /* mix-blend-mode: multiply; */
   background-color: transparent;
   color: var(--text);
   padding: var(--padding-xs);
@@ -102,7 +76,6 @@ export const ButtonContainer = styled.div`
 `;
 export const StyledLinkGo = styled(Link)`
   text-decoration: none;
-  /* mix-blend-mode: multiply; */
   color: var(--text);
   padding: var(--padding-xs);
   border: 2px solid;
@@ -134,7 +107,9 @@ export const StyledLinkBack = styled(Link)`
     background-color: var(--error);
   }
 `;
-
+export const SpotContainer = styled.div`
+  width: 100%;
+`;
 export const SingleSpot = styled.div`
   background-color: var(--yellow);
   color: var(--dark);
@@ -145,10 +120,15 @@ export const SingleSpot = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--padding-s);
-  max-width: 700px;
+
   margin: 0 auto;
+  overflow: hidden;
+  resize: both;
   .image {
+    width: 100%;
     border: solid 1px;
+    overflow: hidden;
+    resize: both;
   }
   .wrapbuttons {
     display: flex;
@@ -165,34 +145,18 @@ export const SingleSpot = styled.div`
     justify-content: space-between;
     align-items: center;
   }
+
+  .addedby {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .categorywrap {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 2em;
-  }
-  > a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    color: var(--dark);
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      height: 2px;
-      width: 0;
-      background: var(--dark);
-      transition: width 150ms linear;
-    }
-    &:hover::before {
-      width: 100%;
-    }
-    .smiley > svg {
-      transform: rotateX(180deg);
-    }
   }
 `;
 
@@ -213,6 +177,5 @@ export const ButtonBack = styled.button`
 `;
 
 export const FooterGap = styled.div`
-  //
   height: 50px;
 `;

@@ -29,11 +29,10 @@ export const ImageFormContainer = styled.div`
     gap: 2rem;
   }
   .container {
-    width: 400px;
+    width: 100%;
   }
   .span {
     font-style: italic;
-    display: inline-block;
     font-size: 15px;
   }
   .sure {
@@ -41,14 +40,19 @@ export const ImageFormContainer = styled.div`
   }
   .upload {
     text-decoration: underline;
+    font-size: 30px;
   }
   .preview {
-    max-width: 400px;
+    width: 100%;
   }
 
   .uploaded {
-    max-width: 400px;
+    width: 100%;
+    margin-bottom: 20px;
   }
+`;
+export const FormContainer = styled.div`
+  width: 100%;
 `;
 
 export const InputImage = styled.input`

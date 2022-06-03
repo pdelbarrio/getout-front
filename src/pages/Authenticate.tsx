@@ -15,7 +15,7 @@ import {
 import "./video.css";
 import bgVideo from "../video/bgvideo.mp4";
 import { useNavigate } from "react-router-dom";
-import { setErrorToast } from "../utils/toasts";
+import { setErrorToast, setSuccessToast } from "../utils/toasts";
 import { ButtonContainer, ButtonInfoModal } from "../ui/Modal";
 import ModalInfo from "./ModalInfo";
 
@@ -60,6 +60,7 @@ const Authenticate = () => {
     } else {
       setUserEmail(values.email);
       setFormVariant("login");
+      setSuccessToast("Your user has been created, now you can login");
     }
   };
 
