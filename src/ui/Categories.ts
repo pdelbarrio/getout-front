@@ -13,8 +13,10 @@ export const CategoriesWrapper = styled.div`
 `;
 
 export const Content = styled.div<{ img: string; color: string }>`
-  width: 439px;
-  height: 256px;
+  /* width: 439px;
+  height: 256px; */
+  width: 400px;
+  height: 233px;
   background-image: url(${(props) => props.img});
   background-color: ${(props) => props.color};
   background-blend-mode: screen;
@@ -28,8 +30,8 @@ export const Content = styled.div<{ img: string; color: string }>`
     font-size: 30px;
     padding: var(--padding-s);
     border-radius: 20px;
-    width: 350px;
-    margin-left: 30px;
+    width: 200px;
+    align-self: center;
   }
 `;
 
@@ -48,6 +50,8 @@ export const CategoryLink = styled(Link)`
   padding: var(--padding-s);
   border-radius: 20px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-around;
 `;
 export const DistrictLink = styled(Link)`
   margin-top: 10px;

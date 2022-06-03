@@ -53,6 +53,8 @@ export const ImageFormContainer = styled.div`
 `;
 export const FormContainer = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const InputImage = styled.input`
@@ -62,6 +64,7 @@ export const InputImage = styled.input`
   border-radius: var(--border-radius);
   width: 100%;
   max-width: var(--input-width);
+  margin: 0 auto;
 
   &:placeholder {
     color: var(--grey);

@@ -10,7 +10,8 @@ export const FormLayout = styled.div`
   flex-direction: column;
   gap: var(--padding-s);
   width: 100%;
-  margin: 0 auto;
+  /* margin-right: 10px; */
+  margin-left: 10px;
 
   > h3 {
     align-self: center;

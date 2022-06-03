@@ -108,7 +108,10 @@ export const StyledLinkBack = styled(Link)`
   }
 `;
 export const SpotContainer = styled.div`
-  width: 100%;
+  /* width: 100%; */
+  /* margin-left: 5px; */
+  /* margin-right: 5px; */
+  resize: both;
 `;
 export const SingleSpot = styled.div`
   background-color: var(--yellow);
