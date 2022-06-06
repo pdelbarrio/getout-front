@@ -37,7 +37,7 @@ export const SpotsGroup = styled.div`
 
     gap: var(--padding-s);
     max-width: 300px;
-    width: 100%;
+    /* width: 100%; */
 
     .spotname {
       font-weight: bolder;
@@ -109,14 +109,16 @@ export const StyledLinkBack = styled(Link)`
 `;
 export const SpotContainer = styled.div`
   /* width: 100%; */
-  /* margin-left: 5px; */
-  /* margin-right: 5px; */
-  resize: both;
+  margin-left: 5px;
+  margin-right: 5px;
+  /* resize: both; */
 `;
 export const SingleSpot = styled.div`
+  margin-left: 5px;
+  margin-right: 5px;
   background-color: var(--yellow);
   color: var(--dark);
-  padding: var(--padding-s);
+  /* padding: var(--padding-s); */
   border: 2px solid;
   border-radius: 20px;
 
@@ -128,7 +130,7 @@ export const SingleSpot = styled.div`
   overflow: hidden;
   resize: both;
   .image {
-    width: 100%;
+    max-width: 400px;
     border: solid 1px;
     overflow: hidden;
     resize: both;
@@ -160,6 +162,14 @@ export const SingleSpot = styled.div`
     justify-content: space-around;
     align-items: center;
     padding: 2em;
+  }
+
+  .spoturl {
+    max-width: 400px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    word-break: break-word;
   }
 `;
 

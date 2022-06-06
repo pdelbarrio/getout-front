@@ -27,6 +27,7 @@ export const Button = styled.button<{ variant: ButtonVariants }>`
   text-overflow: ellipsis;
   transition: all 0.14s ease-out;
   margin: 5px;
+  margin-bottom: 20px;
 
   &:hover {
     box-shadow: 4px 4px 0 #000;

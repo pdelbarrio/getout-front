@@ -42,12 +42,19 @@ export const ImageFormContainer = styled.div`
     text-decoration: underline;
     font-size: 30px;
   }
+  .upload2 {
+    text-decoration: underline;
+    font-size: 30px;
+  }
+  .textupload2 {
+    padding: 30px;
+  }
   .preview {
-    width: 100%;
+    width: 400px;
   }
 
   .uploaded {
-    width: 100%;
+    width: 400px;
     margin-bottom: 20px;
   }
 `;

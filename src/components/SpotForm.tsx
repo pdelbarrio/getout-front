@@ -62,30 +62,25 @@ const SpotForm = ({ onSubmit }: Props) => {
   };
 
   const onSubmitFile = async (file: any) => {
-    //here, we are creatingng a new FormData object; this lets you compile a set of key/value pairs.
     var data = new FormData();
-    // we are appending a new value onto an existing key inside a FormData object. the keys here are what is required for the upload by the cloudinary endpoint. the value in line 7 is your upload preset
+
     data.append("upload_preset", "spotspreset");
     data.append("file", file);
     try {
-      //making a post request to the cloudinary endpoint
       const response = await axios.post(
         `https://api.cloudinary.com/v1_1/getoutbcn/image/upload`,
         data
       );
 
-      //if a response is gotten, we set the selectedFile to null(this is also the original value while desclaring the state variable
       if (response.data) {
         setSelectedFile(null);
-        // the API call returns a response that includes the URLs for accessing the uploaded file. here, when we have a response, we call setUploadedImage with a new value.
+
         setUploadedImage(response.data.secure_url);
         setValue("image", response.data.secure_url);
         setDisplayFile(null);
       }
     } catch (e: unknown) {
-      //logthe error if any here. you can as well display them to the users
       console.error(errors);
-      // set the state of loading to 0 if there is an error
     }
   };
 
@@ -98,17 +93,17 @@ const SpotForm = ({ onSubmit }: Props) => {
             <div className="inputs">
               {displayFile ? (
                 <p>
-                  This will be the image of your spot,{" "}
-                  <span className="sure">
+                  This is the PREVIEW of the image of your spot,{" "}
+                  <p className="sure">
                     if you are sure <span className="upload">click upload</span>
-                  </span>
+                  </p>
                 </p>
               ) : (
                 <p>
                   Select an image for your spot
-                  <span className="span">
+                  <p className="span">
                     (recommended horizontal image for display reasons)
-                  </span>
+                  </p>
                 </p>
               )}
               {uploadedImage ? null : (
@@ -129,11 +124,11 @@ const SpotForm = ({ onSubmit }: Props) => {
             <img className="preview" alt="preview" src={displayFile} />
           ) : null}
           {displayFile ? (
-            <p>
-              This will be the image of your spot,{" "}
-              <span className="sure">
-                if you are sure <span className="upload">click upload</span>
-              </span>
+            <p className="textupload2">
+              This is the PREVIEW of the image of your spot,{" "}
+              <p className="sure">
+                if you are sure <span className="upload2">click upload</span>
+              </p>
             </p>
           ) : null}
         </div>
