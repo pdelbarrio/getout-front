@@ -38,7 +38,7 @@ export const CATEGORIES: Category[] = [
     image:
       "https://res.cloudinary.com/getoutbcn/image/upload/v1653668746/getout/categories/standup_r5vamx.jpg",
     color: "#65b867",
-    description: "Stand up has become trendy, and that's ok!",
+    description: "Stand up, open mics, improvisation, LOL",
   },
   {
     id: 5,
@@ -107,7 +107,7 @@ export const CATEGORIES: Category[] = [
 
     color: "#65b867",
     description:
-      "Organizations with no fixed premises or with no physical location but which do cool things.",
+      "Organizations with with no physical location but which do cool things.",
   },
   {
     id: 12,
