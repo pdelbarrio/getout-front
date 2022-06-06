@@ -36,11 +36,12 @@ export const Content = styled.div<{ img: string; color: string }>`
 `;
 
 export const ContainerDescription = styled.div`
-  color: var(--dark) !important;
-  cursor: pointer;
-  font-weight: bold;
+  color: var(--dark);
+  /* cursor: pointer; */
+  /* font-weight: bold; */
   padding-left: 50px;
   padding-right: 20px;
+  font-style: italic;
   margin: auto;
 `;
 

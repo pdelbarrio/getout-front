@@ -22,12 +22,8 @@ const Categories = ({ img, color }: Props) => {
           <ul key={type.id}>
             <li>
               <Content color={type.color} img={type.image}>
-                <ContainerDescription
-                  as={motion.div}
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                >
-                  {type.description}
+                <ContainerDescription>
+                  <p>{type.description}</p>
                 </ContainerDescription>
                 <CategoryLink to={`/spots/${type.slug}`}>
                   <motion.button
