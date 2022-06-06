@@ -107,33 +107,41 @@ export const StyledLinkBack = styled(Link)`
     background-color: var(--error);
   }
 `;
+
+export const Container = styled.div`
+  margin-left: 20px;
+  margin-right: 20px;
+`;
+
 export const SpotContainer = styled.div`
-  /* width: 100%; */
-  margin-left: 5px;
-  margin-right: 5px;
-  /* resize: both; */
+  margin-left: 20px;
+  margin-right: 20px;
 `;
 export const SingleSpot = styled.div`
-  margin-left: 5px;
-  margin-right: 5px;
   background-color: var(--yellow);
   color: var(--dark);
-  /* padding: var(--padding-s); */
+
   border: 2px solid;
   border-radius: 20px;
-
   display: flex;
   flex-direction: column;
   gap: var(--padding-s);
-
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   resize: both;
+  .padding {
+    padding: 20px;
+  }
+
   .image {
+    /* border-radius: 20px;
     max-width: 400px;
     border: solid 1px;
     overflow: hidden;
-    resize: both;
+    resize: both; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .wrapbuttons {
     display: flex;
