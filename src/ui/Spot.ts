@@ -116,23 +116,26 @@ export const Container = styled.div`
 export const SpotContainer = styled.div`
   margin-left: 20px;
   margin-right: 20px;
+  max-width: 600px;
 `;
 export const SingleSpot = styled.div`
   background-color: var(--yellow);
   color: var(--dark);
-
   border: 2px solid;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   gap: var(--padding-s);
   margin: 0 auto;
-  /* overflow: hidden; */
   resize: both;
+
   .padding {
     padding: 20px;
   }
-
+  .spotname {
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
   .image {
     /* border-radius: 20px;
     max-width: 400px;
@@ -147,6 +150,7 @@ export const SingleSpot = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 40px;
   }
   .name {
     font-weight: bold;
@@ -157,19 +161,25 @@ export const SingleSpot = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 20px;
   }
 
-  .addedby {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .description {
+    padding-bottom: 20px;
   }
-
+  .web {
+    font-weight: bold;
+  }
+  .location {
+    font-weight: bold;
+  }
   .categorywrap {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 2em;
+    padding: 1em;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .spoturl {
@@ -178,6 +188,7 @@ export const SingleSpot = styled.div`
     word-wrap: break-word;
     hyphens: auto;
     word-break: break-word;
+    padding-bottom: 20px;
   }
 `;
 

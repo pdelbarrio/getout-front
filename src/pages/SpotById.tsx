@@ -34,7 +34,7 @@ const SpotById = () => {
       {result.map((spot) => (
         <SingleSpot key={spot._id}>
           <div className="padding">
-            <h3>{spot.name}</h3>
+            <h3 className="spotname">{spot.name}</h3>
             <img className="image" src={spot.image} alt={spot.name} />
 
             <Link className="addedby" to={`/addedby/${spot.uploader._id}`}>
@@ -49,8 +49,8 @@ const SpotById = () => {
               </h4>
             </Link>
 
-            <p>{spot.description}</p>
-            <h4>url</h4>
+            <p className="description">{spot.description}</p>
+            <h4 className="web">web</h4>
             <a target="_blank" className="spoturl" href={spot.website}>
               {spot.website}
             </a>
@@ -67,7 +67,7 @@ const SpotById = () => {
               </div>
             </div>
 
-            <h4>location</h4>
+            <h4 className="location">location</h4>
 
             <p>{spot.location}</p>
             <div className="wrapbuttons">
