@@ -12,6 +12,14 @@ export const ButtonVideoContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end !important;
+  margin-left: 50vw;
+  margin-top: 15px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 50vw;
+    margin-top: 15px;
+    justify-content: flex-end !important;
+  }
 `;
 
 export const FormWrapper = styled.div`
@@ -40,12 +48,12 @@ export const ButtonVideo = styled.button`
   border: none;
   background: none;
   cursor: pointer;
-  margin-left: 800px;
-  margin-top: 15px;
+  /* margin-left: 800px;
+  margin-top: 15px; */
 
   @media screen and (max-width: 768px) {
-    margin-left: 300px;
-    margin-top: 15px;
+    /* margin-left: 300px;
+    margin-top: 15px; */
   }
 
   svg {
