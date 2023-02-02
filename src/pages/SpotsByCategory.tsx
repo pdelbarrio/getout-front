@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 
 const SpotsByCategory = () => {
   const { getSpots, spots } = useContext(SpotContext);
+  const [paginate, setpaginate] = useState(8);
   const { type } = useParams<{ type?: string }>();
 
   useEffect(() => {
@@ -46,6 +47,11 @@ const SpotsByCategory = () => {
   //   console.log(newArray)
   //   return newArray;
   // };
+  const resultPaginated = result.slice(0, paginate);
+
+  const load_more = (event: any) => {
+    setpaginate((prevValue) => prevValue + 8);
+  };
 
   return (
     <>
@@ -56,7 +62,7 @@ const SpotsByCategory = () => {
           <p>{description}</p>
         </div>
         <SpotsGroup>
-          {result.map((spot) => (
+          {resultPaginated.map((spot) => (
             <motion.div
               className="spotcard"
               whileHover={{ scale: 1.1 }}
@@ -76,6 +82,8 @@ const SpotsByCategory = () => {
             </motion.div>
           ))}
         </SpotsGroup>
+        {/* Make conditional button // TODO:*/}
+        <button onClick={load_more}>Load More</button>
       </SpotsWrapper>
       <FooterGap></FooterGap>
     </>
