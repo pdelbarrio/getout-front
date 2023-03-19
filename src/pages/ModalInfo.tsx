@@ -19,9 +19,11 @@ function ModalInfo({ stateModal, setStateModal }: Props) {
           other users.
         </p>
         <p>
-          This application has just started, so expect improvements to be made
-          over time. If you find any bugs or have any suggestions or whatever,
-          you can make them in the contact section.
+          Since at the moment signin up is mandatory to access, you can see a
+          video demo by clicking on this link
+          <a href="https://vimeo.com/720203535" target="_blank">
+            VIDEODEMO
+          </a>
         </p>
         <span>GET OUT!</span>
         <ButtonModal onClick={() => setStateModal(!setStateModal)}>
