@@ -20,7 +20,9 @@ function ModalInfo({ stateModal, setStateModal }: Props) {
         </p>
         <p>
           Since at the moment signin up is mandatory to access, you can see a
-          video demo by clicking on this link
+          video demo by clicking on the following link
+          <br />
+          <br />
           <a href="https://vimeo.com/720203535" target="_blank">
             VIDEODEMO
           </a>
